@@ -12,11 +12,7 @@ const Hero: React.FC = () => {
       id="hero" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-<<<<<<< HEAD
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/resume/images/hero-background.jpg')`,
-=======
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/hero-background.jpg')`,
->>>>>>> origin/main
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
