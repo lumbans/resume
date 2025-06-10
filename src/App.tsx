@@ -17,7 +17,7 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={
+            <Route path="/resume/" element={
               <>
                 <Hero />
                 <Experience />
