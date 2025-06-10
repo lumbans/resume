@@ -1,6 +1,6 @@
 {
   "name": "lumban_sopian_portofolio",
-  "private": true,
+  "homepage": "https://lumbans.github.io/resume/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
