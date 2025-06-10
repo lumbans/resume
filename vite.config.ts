@@ -4,12 +4,12 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/resume/"
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/resume/", 
   build: {
     sourcemap: false, 
     rollupOptions: {
