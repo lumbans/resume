@@ -38,7 +38,6 @@ const Footer: React.FC = () => {
 
   const contactInfo = [
     { icon: <Mail size={16} />, label: 'lumban.sopian@msn.com', href: 'mailto:lumban.sopian@msn.com' },
-    { icon: <Phone size={16} />, label: '+62 821 2242 8287', href: 'tel:+6282122428287' },
     { icon: <Linkedin size={16} />, label: 'linkedin.com/in/lumbans', href: 'https://www.linkedin.com/in/lumbans' },
     { icon: <MapPin size={16} />, label: 'Tangerang, Banten, Indonesia', href: null }
   ];
@@ -217,13 +216,6 @@ const Footer: React.FC = () => {
                   title="LinkedIn"
                 >
                   <Linkedin size={18} />
-                </a>
-                <a
-                  href="tel:+6282122428287"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  title="Phone"
-                >
-                  <Phone size={18} />
                 </a>
               </div>
 
