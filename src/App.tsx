@@ -17,7 +17,11 @@ function App() {
         <Header />
         <main>
           <Routes>
+<<<<<<< HEAD
             <Route path="/resume/" element={
+=======
+            <Route path="/" element={
+>>>>>>> origin/main
               <>
                 <Hero />
                 <Experience />

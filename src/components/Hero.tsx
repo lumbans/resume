@@ -12,7 +12,11 @@ const Hero: React.FC = () => {
       id="hero" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
+<<<<<<< HEAD
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/resume/images/hero-background.jpg')`,
+=======
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/hero-background.jpg')`,
+>>>>>>> origin/main
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -121,7 +125,11 @@ const Hero: React.FC = () => {
             <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-lg opacity-30"></div>
               <img
+<<<<<<< HEAD
                 src="/resume/images/professional-headshot.jpg"
+=======
+                src="/images/professional-headshot.jpg"
+>>>>>>> origin/main
                 alt="Lumban Sopian - IT Executive"
                 className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
               />
