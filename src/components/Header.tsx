@@ -72,12 +72,6 @@ const Header: React.FC = () => {
             >
               <Linkedin size={20} />
             </a>
-            <a 
-              href="tel:+6282122428287"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
-            >
-              <Phone size={20} />
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
