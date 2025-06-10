@@ -86,13 +86,6 @@ const Contact: React.FC = () => {
       description: 'Professional inquiries and opportunities'
     },
     {
-      icon: <Phone className="text-green-400" size={24} />,
-      label: 'Phone',
-      value: '+62 821 2242 8287',
-      link: 'tel:+6282122428287',
-      description: 'Available for calls (GMT+7)'
-    },
-    {
       icon: <Linkedin className="text-blue-500" size={24} />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/lumbans',
