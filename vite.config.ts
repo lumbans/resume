@@ -9,9 +9,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/resume/", // For https://lumbans.github.io/resume/
+  base: "/resume/", 
   build: {
-    sourcemap: false, // Prevent /src/main.tsx requests
+    sourcemap: false, 
     rollupOptions: {
       output: {
         manualChunks: {
