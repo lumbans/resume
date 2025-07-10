@@ -6,7 +6,6 @@ import { Building, Calendar, TrendingUp, Users, DollarSign, Shield } from 'lucid
 interface ExperienceItem {
   title: string;
   company: string;
-  period: string;
   achievements: string[];
   technologies: string[];
   metrics: {
@@ -20,7 +19,6 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Senior Vice President – Chief Information Security Officer (CISO)",
     company: "PT. Bank Multiarta Sentosa",
-    period: "Sep 2023 - Present",
     achievements: [
       "Lead comprehensive cybersecurity strategy for 20+ professionals across Infosec, QA, IT GRC, and DevOps divisions",
       "Reduced security incidents by 30% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
@@ -38,7 +36,6 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Senior Cloud Consultant",
     company: "SoftwareONE",
-    period: "Jun 2023 - Oct 2023",
     achievements: [
       "Executed large-scale migration of 100+ CDN assets from Akamai to AWS CloudFront, managing $2M+ infrastructure transformation",
       "Achieved 25% reduction in content delivery latency post-migration through advanced caching optimization and edge location strategy",
@@ -55,7 +52,6 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Principal DevOps Engineer",
     company: "Lyte Ventures Pte. Ltd",
-    period: "Oct 2022 - Apr 2023",
     achievements: [
       "Architected and implemented scalable cloud-native solutions using AWS CDK with C#, serving 1M+ daily active users",
       "Reduced cloud operational costs by 30% through infrastructure optimization and automated resource scaling policies",
@@ -72,7 +68,6 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Vice President - DevOps Division Head",
     company: "PT Fintek Karya Nusantara (LinkAja)",
-    period: "Aug 2019 - Oct 2021",
     achievements: [
       "Led 70+ professionals across SRE, QA, Automation Engineering, and Monitoring teams, managing $10M+ annual infrastructure budget",
       "Implemented comprehensive CI/CD pipelines using GitLab CI, Helm Charts, and Kubernetes on AWS EKS, serving 50M+ users",
@@ -137,11 +132,6 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-2 mb-6">
-                    <Calendar className="text-gray-400" size={16} />
-                    <span className="text-gray-300">{experience.period}</span>
-                  </div>
-
                   {/* Key Metrics */}
                   <div className="space-y-3">
                     {experience.metrics.map((metric, metricIndex) => (

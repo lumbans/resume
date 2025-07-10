@@ -4,7 +4,7 @@
 
 Successfully developed and deployed a comprehensive professional portfolio website for Lumban Sopian, a Strategic IT Executive with 15+ years of experience as CISO, DevOps Leader, and Cloud Architect.
 
-**Live Website URL**: https://de7mbut7mk.space.minimax.io
+**Live Website URL**: https://lumbans.github.io/resume
 
 ## 🎯 PROJECT OBJECTIVES ACHIEVED
 
@@ -220,7 +220,7 @@ lumban-sopian-portfolio/
 
 ### **Professional Contact Information:**
 - **Email**: lumban.sopian@msn.com
-- **Phone**: +62 821 2242 8287
+- **Phone**: (please mail me)
 - **LinkedIn**: https://www.linkedin.com/in/lumbans
 - **Location**: Tangerang, Banten, Indonesia
 
@@ -240,4 +240,4 @@ The deployed website is production-ready, fully functional, and serves as a powe
 
 **Project Status**: ✅ COMPLETED SUCCESSFULLY
 **Website Status**: ✅ LIVE AND FUNCTIONAL
-**Deployment URL**: https://de7mbut7mk.space.minimax.io
+**Deployment URL**: https://lumbans.github.io/resume
