@@ -82,10 +82,10 @@ const certifications: Certification[] = [
   },
   {
     id: 'ciso',
-    name: 'Certified Chief Information Security Officer (CISO)',
+    name: 'Chief Information Security Officer-C|CISO',
     issuer: 'EC-COUNCIL',
     year: '2024',
-    status: 'complated',
+    status: 'completed',
     category: 'Information Security',
     description: 'Global certification for information security management and governance.',
     icon: <Shield className="text-purple-400" size={24} />,
