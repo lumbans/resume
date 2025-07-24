@@ -81,11 +81,11 @@ const certifications: Certification[] = [
     skills: ['Solution Design', 'AWS Architecture', 'Scalability', 'High Availability']
   },
   {
-    id: 'cism',
-    name: 'Certified Information Security Manager (CISM)',
-    issuer: 'ISACA',
+    id: 'ciso',
+    name: 'Certified Chief Information Security Officer (CISO)',
+    issuer: 'EC-COUNCIL',
     year: '2024',
-    status: 'planned',
+    status: 'complated',
     category: 'Information Security',
     description: 'Global certification for information security management and governance.',
     icon: <Shield className="text-purple-400" size={24} />,
