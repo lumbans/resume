@@ -34,22 +34,6 @@ const experienceData: ExperienceItem[] = [
     ]
   },
   {
-    title: "Senior Cloud Consultant",
-    company: "SoftwareONE",
-    achievements: [
-      "Executed large-scale migration of 100+ CDN assets from Akamai to AWS CloudFront, managing $2M+ infrastructure transformation",
-      "Achieved 25% reduction in content delivery latency post-migration through advanced caching optimization and edge location strategy",
-      "Successfully migrated 3 enterprise domains and 100+ DNS records to AWS Route 53 with zero downtime using blue-green deployment",
-      "Developed automated migration scripts using Terraform and AWS CLI, reducing manual effort by 60% for future migrations"
-    ],
-    technologies: ["AWS CloudFront", "Route 53", "Terraform", "AWS CLI", "Blue-Green Deployment"],
-    metrics: [
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "$2M+", label: "Infrastructure Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "25%", label: "Latency Reduction" },
-      { icon: <Users className="text-orange-400" size={20} />, value: "60%", label: "Manual Effort Reduction" }
-    ]
-  },
-  {
     title: "Principal DevOps Engineer",
     company: "Lyte Ventures Pte. Ltd",
     achievements: [
@@ -63,6 +47,21 @@ const experienceData: ExperienceItem[] = [
       { icon: <Users className="text-orange-400" size={20} />, value: "1M+", label: "Daily Active Users" },
       { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Cost Reduction" },
       { icon: <DollarSign className="text-green-400" size={20} />, value: "4h→30m", label: "Provisioning Time" }
+    ]
+  },
+  {
+    title: "VP - IT Service & Infrastructure Division Head",
+    company: "PT Bank Jago Tbk",
+    achievements: [
+      "Managed hybrid infrastructure, led server room migrations, and acted as Head of IT Security. Led server room migrationsi achieving a 99.9% uptime for critical banking services",
+      "Successfully coordinated disaster recovery simulations, improving system resilience by 25%",
+      "Led the implementation of Endpoint Protection and Data Loss Prevention (DLP) across the organization."
+    ],
+    technologies: ["Infosec", "Trendmicro DLP Endpoint Potenction", "VMWAREe", "Solarwinds", "GCP", "GKE", "Cloudflare"],
+    metrics: [
+      { icon: <Users className="text-orange-400" size={20} />, value: "2M+", label: "Daily Active Users" },
+      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incident" },
+      { icon: <DollarSign className="text-green-400" size={20} />, value: "<1h", label: "Less down Time" }
     ]
   },
   {

@@ -95,14 +95,21 @@ const certifications: Certification[] = [
 
 const education: Education[] = [
   {
-    degree: 'Computer Science',
+    degree: 'Master of Business Administraiton',
+    institution: 'University of People',
+    period: '2025 - Present',
+    status: 'Current Studies',
+    description: 'Master of Business Administrator.'
+  },
+  {
+    degree: 'Master of Computer Science',
     institution: 'Binus University',
     period: '2025 - Present',
     status: 'Current Studies',
     description: 'Advanced computer science program focusing on modern software engineering and technology leadership.'
   },
   {
-    degree: 'Information System',
+    degree: 'Bachelor of Information System',
     institution: 'Nusa Mandiri University',
     period: '2021 - 2024',
     status: 'Completed',
