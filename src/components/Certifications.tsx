@@ -364,7 +364,7 @@ const Certifications: React.FC = () => {
               </div>
               <div className="text-center">
                 <GraduationCap className="mx-auto text-blue-400 mb-3" size={32} />
-                <div className="text-2xl font-bold text-white mb-1">2</div>
+                <div className="text-2xl font-bold text-white mb-1">3</div>
                 <div className="text-gray-400">Degrees</div>
               </div>
               <div className="text-center">
