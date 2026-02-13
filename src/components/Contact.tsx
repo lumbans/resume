@@ -8,20 +8,14 @@ import {
   Send,
   CheckCircle,
   AlertCircle,
-  User,
-  Building,
-  MessageSquare,
-  Clock,
-  Globe
+  Clock
 } from 'lucide-react';
 
 interface ContactForm {
   name: string;
   email: string;
-  company: string;
   subject: string;
   message: string;
-  inquiryType: string;
 }
 
 const Contact: React.FC = () => {
@@ -33,10 +27,8 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
-    company: '',
     subject: '',
-    message: '',
-    inquiryType: 'general'
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,7 +36,7 @@ const Contact: React.FC = () => {
     useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -67,7 +59,7 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify({
           ...formData,
-          _subject: `New ${formData.inquiryType} inquiry from ${formData.name}`
+          _subject: `New contact message from ${formData.name}`
         })
       });
 
@@ -76,10 +68,8 @@ const Contact: React.FC = () => {
         setFormData({
           name: '',
           email: '',
-          company: '',
           subject: '',
-          message: '',
-          inquiryType: 'general'
+          message: ''
         });
       } else {
         setSubmitStatus('error');
@@ -90,27 +80,6 @@ const Contact: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  const contactInfo = [
-    {
-      icon: <Mail className="text-blue-400" size={24} />,
-      label: 'Email',
-      value: 'lumban.sopian@msn.com',
-      link: 'mailto:lumban.sopian@msn.com'
-    },
-    {
-      icon: <Linkedin className="text-blue-500" size={24} />,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/lumbans',
-      link: 'https://www.linkedin.com/in/lumbans'
-    },
-    {
-      icon: <MapPin className="text-red-400" size={24} />,
-      label: 'Location',
-      value: 'Tangerang, Banten, Indonesia',
-      link: null
-    }
-  ];
 
   return (
     <section
@@ -129,7 +98,8 @@ const Contact: React.FC = () => {
             Let's Connect
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Ready to discuss digital transformation, cloud architecture, or strategic technology initiatives?
+            Open to strategic conversations around cloud, DevSecOps,
+            digital transformation, and technology leadership.
           </p>
         </motion.div>
 
@@ -193,28 +163,6 @@ const Contact: React.FC = () => {
 
                 <input
                   type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Company"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                />
-
-                <select
-                  name="inquiryType"
-                  value={formData.inquiryType}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                >
-                  <option value="general">General Inquiry</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="executive">Executive Role</option>
-                  <option value="board">Board Advisory</option>
-                  <option value="speaking">Speaking Engagement</option>
-                </select>
-
-                <input
-                  type="text"
                   name="subject"
                   required
                   value={formData.subject}
@@ -263,30 +211,36 @@ const Contact: React.FC = () => {
                 Contact Information
               </h3>
 
-              {contactInfo.map((info, i) => (
-                <div key={i} className="flex items-center space-x-4 mb-4">
-                  {info.icon}
-                  <div>
-                    <div className="text-white font-medium">
-                      {info.label}
-                    </div>
-                    {info.link ? (
-                      <a
-                        href={info.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <div className="text-gray-400">
-                        {info.value}
-                      </div>
-                    )}
-                  </div>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <Mail className="text-blue-400" size={22} />
+                  <a
+                    href="mailto:lumban.sopian@msn.com"
+                    className="text-blue-400 hover:underline"
+                  >
+                    lumban.sopian@msn.com
+                  </a>
                 </div>
-              ))}
+
+                <div className="flex items-center space-x-4">
+                  <Linkedin className="text-blue-500" size={22} />
+                  <a
+                    href="https://www.linkedin.com/in/lumbans"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:underline"
+                  >
+                    linkedin.com/in/lumbans
+                  </a>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <MapPin className="text-red-400" size={22} />
+                  <span className="text-gray-400">
+                    Tangerang, Indonesia
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6">
