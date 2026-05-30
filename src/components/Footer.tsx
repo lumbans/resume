@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
                 <h3 className="text-lg font-semibold text-white mb-6">Professional Highlights</h3>
                 <div className="space-y-4">
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">15+</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">18+</div>
                     <div className="text-gray-400 text-sm">Years Experience</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
@@ -163,8 +163,8 @@ const Footer: React.FC = () => {
                     <div className="text-gray-400 text-sm">Team Members Led</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">$10M+</div>
-                    <div className="text-gray-400 text-sm">Budget Managed</div>
+                    <div className="text-2xl font-bold text-purple-400 mb-1">$5M+</div>
+                    <div className="text-gray-400 text-sm">Annual Budget</div>
                   </div>
                 </div>
               </motion.div>

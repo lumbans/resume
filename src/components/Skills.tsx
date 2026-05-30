@@ -152,7 +152,7 @@ const Skills: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Comprehensive technical skills across cloud platforms, security, DevOps, 
-            and leadership gained through 15+ years of hands-on experience
+            and leadership gained through 18+ years of hands-on experience
           </p>
         </motion.div>
 
@@ -281,7 +281,7 @@ const Skills: React.FC = () => {
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
             <Zap className="mx-auto text-orange-400 mb-3" size={32} />
-            <div className="text-2xl font-bold text-white mb-1">15+</div>
+            <div className="text-2xl font-bold text-white mb-1">18+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">

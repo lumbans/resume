@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
               className="grid grid-cols-2 gap-6 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">15+</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">18+</div>
                 <div className="text-sm text-gray-300">Years Experience</div>
               </div>
               <div className="text-center">
@@ -85,8 +85,8 @@ const Hero: React.FC = () => {
                 <div className="text-sm text-gray-300">Team Members Led</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">$10M+</div>
-                <div className="text-sm text-gray-300">Budget Managed</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$5M+</div>
+                <div className="text-sm text-gray-300">Annual Budget</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">50M+</div>

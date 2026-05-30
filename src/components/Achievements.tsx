@@ -37,8 +37,8 @@ const achievements: Achievement[] = [
     title: 'Enterprise Security Transformation',
     description: 'Led comprehensive cybersecurity strategy implementation across financial institution, establishing Zero Trust Architecture and DevSecOps practices.',
     metrics: [
-      { value: '30%', label: 'Security Incidents Reduction', icon: <Shield size={20} />, color: 'text-red-400' },
-      { value: '99.9%', label: 'System Availability', icon: <CheckCircle size={20} />, color: 'text-green-400' },
+      { value: '40%', label: 'Security Incidents Reduction', icon: <Shield size={20} />, color: 'text-red-400' },
+      { value: '99.95%', label: 'System Availability', icon: <CheckCircle size={20} />, color: 'text-green-400' },
       { value: '$5M+', label: 'Annual Security Budget', icon: <DollarSign size={20} />, color: 'text-yellow-400' },
       { value: '20+', label: 'Team Members', icon: <Users size={20} />, color: 'text-blue-400' }
     ],
@@ -138,7 +138,7 @@ const Achievements: React.FC = () => {
             Key <span className="text-blue-400">Achievements</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Quantified business impact and technical excellence across 15+ years of 
+            Quantified business impact and technical excellence across 18+ years of
             strategic leadership in IT transformation and innovation
           </p>
         </motion.div>

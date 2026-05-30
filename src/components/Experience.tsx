@@ -21,16 +21,16 @@ const experienceData: ExperienceItem[] = [
     company: "PT. Bank Multiarta Sentosa",
     achievements: [
       "Lead comprehensive cybersecurity strategy for 20+ professionals across Infosec, QA, IT GRC, and DevOps divisions",
-      "Reduced security incidents by 30% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
+      "Reduced security incidents by 40% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
       "Orchestrated critical infrastructure migration from Direct Connect VGW to Transit Gateway, improving network performance by 20%",
-      "Established Zero Trust Architecture framework, achieving 99.9% system availability for critical banking services",
+      "Established Zero Trust Architecture framework, achieving 99.95% system availability for critical banking services",
       "Implemented comprehensive compliance program covering PCI DSS and OJK regulations, passing all external security audits"
     ],
     technologies: ["DevSecOps", "Zero Trust Architecture", "AWS Transit Gateway", "PCI DSS", "Enterprise Security"],
     metrics: [
       { icon: <DollarSign className="text-green-400" size={20} />, value: "$5M+", label: "Annual Security Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incidents Reduction" },
-      { icon: <Shield className="text-purple-400" size={20} />, value: "99.9%", label: "System Availability" }
+      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "40%", label: "Security Incidents Reduction" },
+      { icon: <Shield className="text-purple-400" size={20} />, value: "99.95%", label: "System Availability" }
     ]
   },
   {
@@ -102,7 +102,7 @@ const Experience: React.FC = () => {
             Professional <span className="text-blue-400">Experience</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            15+ years of strategic leadership in IT, driving digital transformation 
+            18+ years of strategic leadership in IT, driving digital transformation
             and innovation across financial institutions and technology companies
           </p>
         </motion.div>

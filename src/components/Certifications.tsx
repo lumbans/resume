@@ -369,7 +369,7 @@ const Certifications: React.FC = () => {
               </div>
               <div className="text-center">
                 <TrendingUp className="mx-auto text-green-400 mb-3" size={32} />
-                <div className="text-2xl font-bold text-white mb-1">15+</div>
+                <div className="text-2xl font-bold text-white mb-1">18+</div>
                 <div className="text-gray-400">Years Learning</div>
               </div>
               <div className="text-center">
