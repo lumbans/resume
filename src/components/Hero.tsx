@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                 <span className="text-white">Sopian</span>
               </h1>
               <div className="text-xl lg:text-2xl text-gray-300 font-light">
-                Strategic IT Executive | CISO | DevOps & Cloud Architecture Leader
+                Strategic IT Executive | Division Head | DevOps & Cloud Architecture Leader
               </div>
             </motion.div>
 
@@ -52,14 +52,20 @@ const Hero: React.FC = () => {
               className="mb-8"
             >
               <p className="text-lg text-gray-200 leading-relaxed mb-6">
-                Strategic IT Executive with <span className="text-blue-400 font-semibold">15+ years</span> of experience 
-                leading digital transformation in DevOps, Cloud Architecture, and Cybersecurity for financial institutions 
-                and technology companies.
+                Strategic Technology &amp; Security Executive with <span className="text-blue-400 font-semibold">18+ years</span> of
+                experience leading cybersecurity, cloud transformation, DevSecOps, and platform engineering initiatives
+                across banking, fintech, and enterprise organizations.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Currently serving as <span className="text-blue-400 font-semibold">Division Head</span> at
+                PT Bank Multiarta Sentosa Tbk, responsible for enterprise security strategy, technology governance,
+                regulatory compliance, and digital transformation programs.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Currently serving as <span className="text-blue-400 font-semibold">Senior VP & Chief Information Security Officer</span> at 
-                PT. Bank Multiarta Sentosa, managing enterprise security strategy with a team of 20+ professionals 
-                and $5M+ annual budget.
+                Proven track record leading teams of up to <span className="text-blue-400 font-semibold">70+ engineers</span> and
+                managing technology budgets exceeding <span className="text-blue-400 font-semibold">USD 5M</span>, while
+                delivering 40% reduction in security incidents, 30% cloud cost optimization, 50% MTTR improvement, and
+                sustained 99.95%+ service availability.
               </p>
             </motion.div>
 
@@ -137,7 +143,7 @@ const Hero: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Shield className="text-blue-400" size={24} />
                 <div>
-                  <div className="text-white font-semibold">CISO</div>
+                  <div className="text-white font-semibold">Division Head</div>
                   <div className="text-gray-300 text-sm">Security Leader</div>
                 </div>
               </div>

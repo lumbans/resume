@@ -17,7 +17,7 @@ interface ExperienceItem {
 
 const experienceData: ExperienceItem[] = [
   {
-    title: "Senior Vice President – Chief Information Security Officer (CISO)",
+    title: "Senior Vice President – Division Head",
     company: "PT. Bank Multiarta Sentosa",
     achievements: [
       "Lead comprehensive cybersecurity strategy for 20+ professionals across Infosec, QA, IT GRC, and DevOps divisions",
