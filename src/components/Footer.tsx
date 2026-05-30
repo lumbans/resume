@@ -73,9 +73,9 @@ const Footer: React.FC = () => {
                 
                 {/* Expertise Icons */}
                 <div className="flex flex-wrap gap-3">
-                  {expertise.map((item, index) => (
+                  {expertise.map((item) => (
                     <div
-                      key={index}
+                      key={item.label}
                       className="flex items-center space-x-2 px-3 py-2 bg-slate-800/50 rounded-lg border border-slate-700/50"
                       title={item.label}
                     >
@@ -97,8 +97,8 @@ const Footer: React.FC = () => {
               >
                 <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
                 <ul className="space-y-3">
-                  {quickLinks.map((link, index) => (
-                    <li key={index}>
+                  {quickLinks.map((link) => (
+                    <li key={link.href}>
                       <button
                         onClick={() => scrollToSection(link.href.substring(1))}
                         className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-left"
@@ -121,8 +121,8 @@ const Footer: React.FC = () => {
               >
                 <h3 className="text-lg font-semibold text-white mb-6">Contact</h3>
                 <ul className="space-y-3">
-                  {contactInfo.map((contact, index) => (
-                    <li key={index} className="flex items-center space-x-3">
+                  {contactInfo.map((contact) => (
+                    <li key={contact.label} className="flex items-center space-x-3">
                       <span className="text-blue-400">{contact.icon}</span>
                       {contact.href ? (
                         <a

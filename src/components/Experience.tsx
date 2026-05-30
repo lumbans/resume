@@ -57,7 +57,7 @@ const experienceData: ExperienceItem[] = [
       "Successfully coordinated disaster recovery simulations, improving system resilience by 25%",
       "Led the implementation of Endpoint Protection and Data Loss Prevention (DLP) across the organization."
     ],
-    technologies: ["Infosec", "Trendmicro DLP Endpoint Potenction", "VMWAREe", "Solarwinds", "GCP", "GKE", "Cloudflare"],
+    technologies: ["Infosec", "Trendmicro DLP Endpoint Protection", "VMware", "Solarwinds", "GCP", "GKE", "Cloudflare"],
     metrics: [
       { icon: <Users className="text-orange-400" size={20} />, value: "2M+", label: "Daily Active Users" },
       { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incident" },
@@ -110,7 +110,7 @@ const Experience: React.FC = () => {
         <div className="space-y-12">
           {experienceData.map((experience, index) => (
             <motion.div
-              key={index}
+              key={experience.company}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
