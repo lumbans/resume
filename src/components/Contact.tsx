@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import {
   Mail,
   Linkedin,
-  Github,
   MapPin,
   Send,
   CheckCircle,
   AlertCircle,
   Clock
 } from 'lucide-react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
-const FORM_ENDPOINT =
-  import.meta.env.VITE_FORM_ENDPOINT ?? 'https://formspree.io/f/xojnenow';
 
 interface ContactForm {
   name: string;
@@ -23,7 +19,10 @@ interface ContactForm {
 }
 
 const Contact: React.FC = () => {
-  const [ref, inView] = useScrollReveal();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
 
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
@@ -52,7 +51,7 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch(FORM_ENDPOINT, {
+      const response = await fetch('https://formspree.io/f/xojnenow', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +110,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Send a Message
               </h3>
@@ -142,63 +141,45 @@ const Contact: React.FC = () => {
                   style={{ display: 'none' }}
                 />
 
-                <div>
-                  <label htmlFor="contact-name" className="sr-only">Full Name</label>
-                  <input
-                    id="contact-name"
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Full Name"
-                    autoComplete="name"
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Full Name"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                />
 
-                <div>
-                  <label htmlFor="contact-email" className="sr-only">Email Address</label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Email Address"
-                    autoComplete="email"
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                />
 
-                <div>
-                  <label htmlFor="contact-subject" className="sr-only">Subject</label>
-                  <input
-                    id="contact-subject"
-                    type="text"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="Subject"
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="Subject"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                />
 
-                <div>
-                  <label htmlFor="contact-message" className="sr-only">Your Message</label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Your Message"
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none"
-                  />
-                </div>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your Message"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none"
+                />
 
                 <button
                   type="submit"
@@ -206,10 +187,7 @@ const Contact: React.FC = () => {
                   className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold rounded-lg flex items-center justify-center space-x-2 transition-all"
                 >
                   {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
-                      <span>Sending…</span>
-                    </>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
                   ) : (
                     <>
                       <Send size={18} />
@@ -228,7 +206,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Contact Information
               </h3>
@@ -253,18 +231,6 @@ const Contact: React.FC = () => {
                     className="text-blue-400 hover:underline"
                   >
                     linkedin.com/in/lumbans
-                  </a>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <Github className="text-gray-300" size={22} />
-                  <a
-                    href="https://github.com/lumbans"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
-                  >
-                    github.com/lumbans
                   </a>
                 </div>
 

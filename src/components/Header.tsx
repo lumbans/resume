@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, Linkedin, Phone, Github } from 'lucide-react';
-
-const NAV_ITEMS = [
-  { label: 'About', id: 'hero' },
-  { label: 'Impact', id: 'impact' },
-  { label: 'Leadership', id: 'leadership' },
-  { label: 'Career', id: 'experience' },
-  { label: 'Expertise', id: 'expertise' },
-  { label: 'Credentials', id: 'credentials' },
-  { label: 'Research', id: 'research' },
-  { label: 'Contact', id: 'contact' }
-];
+import { Menu, X, Mail, Linkedin, Phone } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,15 +12,6 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (!isMenuOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsMenuOpen(false);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -58,7 +38,14 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {NAV_ITEMS.map((item) => (
+            {[
+              { label: 'About', id: 'hero' },
+              { label: 'Experience', id: 'experience' },
+              { label: 'Skills', id: 'skills' },
+              { label: 'Achievements', id: 'achievements' },
+              { label: 'Certifications', id: 'certifications' },
+              { label: 'Contact', id: 'contact' }
+            ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -77,7 +64,7 @@ const Header: React.FC = () => {
             >
               <Mail size={20} />
             </a>
-            <a
+            <a 
               href="https://www.linkedin.com/in/lumbans"
               target="_blank"
               rel="noopener noreferrer"
@@ -85,22 +72,11 @@ const Header: React.FC = () => {
             >
               <Linkedin size={20} />
             </a>
-            <a
-              href="https://github.com/lumbans"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
-            >
-              <Github size={20} />
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-nav"
             className="md:hidden text-white"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -109,9 +85,16 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav id="mobile-nav" className="md:hidden mt-4 py-4 border-t border-gray-700">
+          <nav className="md:hidden mt-4 py-4 border-t border-gray-700">
             <div className="flex flex-col space-y-4">
-              {NAV_ITEMS.map((item) => (
+              {[
+                { label: 'About', id: 'hero' },
+                { label: 'Experience', id: 'experience' },
+                { label: 'Skills', id: 'skills' },
+                { label: 'Achievements', id: 'achievements' },
+                { label: 'Certifications', id: 'certifications' },
+                { label: 'Contact', id: 'contact' }
+              ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -129,7 +112,7 @@ const Header: React.FC = () => {
                 >
                   <Mail size={20} />
                 </a>
-                <a
+                <a 
                   href="https://www.linkedin.com/in/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -137,15 +120,7 @@ const Header: React.FC = () => {
                 >
                   <Linkedin size={20} />
                 </a>
-                <a
-                  href="https://github.com/lumbans"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
-                >
-                  <Github size={20} />
-                </a>
-                <a
+                <a 
                   href="tel:+6282122428287"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >

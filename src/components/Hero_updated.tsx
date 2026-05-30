@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Shield, Cloud, Users, TrendingUp } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const experienceRef = useRef<HTMLElement | null>(null);
   const scrollToNext = () => {
-    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+    experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/resume/images/hero-background.jpg')`,
         backgroundSize: 'cover',

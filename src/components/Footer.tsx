@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Mail,
-  Linkedin,
-  Github,
-  MapPin,
+import { 
+  Mail, 
+  Phone, 
+  Linkedin, 
+  MapPin, 
   ArrowUp,
+  Heart,
+  Code,
   Shield,
   Cloud,
-  Code,
   Users
 } from 'lucide-react';
 
@@ -38,7 +39,6 @@ const Footer: React.FC = () => {
   const contactInfo = [
     { icon: <Mail size={16} />, label: 'lumban.sopian@msn.com', href: 'mailto:lumban.sopian@msn.com' },
     { icon: <Linkedin size={16} />, label: 'linkedin.com/in/lumbans', href: 'https://www.linkedin.com/in/lumbans' },
-    { icon: <Github size={16} />, label: 'github.com/lumbans', href: 'https://github.com/lumbans' },
     { icon: <MapPin size={16} />, label: 'Tangerang, Banten, Indonesia', href: null }
   ];
 
@@ -67,15 +67,15 @@ const Footer: React.FC = () => {
                   <span className="text-blue-400">Lumban</span> Sopian
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  Technology and Security Executive — cloud transformation,
-                  DevSecOps, Zero Trust, and regulated-industry governance.
+                  Strategic IT Executive specializing in cybersecurity, cloud architecture, 
+                  and digital transformation leadership.
                 </p>
                 
                 {/* Expertise Icons */}
                 <div className="flex flex-wrap gap-3">
-                  {expertise.map((item) => (
+                  {expertise.map((item, index) => (
                     <div
-                      key={item.label}
+                      key={index}
                       className="flex items-center space-x-2 px-3 py-2 bg-slate-800/50 rounded-lg border border-slate-700/50"
                       title={item.label}
                     >
@@ -97,8 +97,8 @@ const Footer: React.FC = () => {
               >
                 <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
                 <ul className="space-y-3">
-                  {quickLinks.map((link) => (
-                    <li key={link.href}>
+                  {quickLinks.map((link, index) => (
+                    <li key={index}>
                       <button
                         onClick={() => scrollToSection(link.href.substring(1))}
                         className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-left"
@@ -121,8 +121,8 @@ const Footer: React.FC = () => {
               >
                 <h3 className="text-lg font-semibold text-white mb-6">Contact</h3>
                 <ul className="space-y-3">
-                  {contactInfo.map((contact) => (
-                    <li key={contact.label} className="flex items-center space-x-3">
+                  {contactInfo.map((contact, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <span className="text-blue-400">{contact.icon}</span>
                       {contact.href ? (
                         <a
@@ -150,19 +150,19 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold text-white mb-6">Executive Profile</h3>
+                <h3 className="text-lg font-semibold text-white mb-6">Professional Highlights</h3>
                 <div className="space-y-4">
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">18+</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">15+</div>
                     <div className="text-gray-400 text-sm">Years Experience</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">70+</div>
-                    <div className="text-gray-400 text-sm">Engineers Led</div>
+                    <div className="text-2xl font-bold text-green-400 mb-1">70+</div>
+                    <div className="text-gray-400 text-sm">Team Members Led</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">$5M+</div>
-                    <div className="text-gray-400 text-sm">Annual Budget</div>
+                    <div className="text-2xl font-bold text-purple-400 mb-1">$10M+</div>
+                    <div className="text-gray-400 text-sm">Budget Managed</div>
                   </div>
                 </div>
               </motion.div>
@@ -183,8 +183,12 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm text-center md:text-left"
             >
-              <p>
-                © {currentYear} Lumban Sopian — Technology &amp; Security Executive.
+              <p className="flex items-center justify-center md:justify-start space-x-1">
+                <span>© {currentYear} Lumban Sopian. Made with</span>
+                <Heart className="text-red-400" size={14} />
+                <span>and</span>
+                <Code className="text-blue-400" size={14} />
+                <span>for professional excellence.</span>
               </p>
             </motion.div>
 
@@ -213,22 +217,12 @@ const Footer: React.FC = () => {
                 >
                   <Linkedin size={18} />
                 </a>
-                <a
-                  href="https://github.com/lumbans"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  title="GitHub"
-                >
-                  <Github size={18} />
-                </a>
               </div>
 
               {/* Back to Top Button */}
               <button
                 onClick={scrollToTop}
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 rounded-lg border border-blue-600/30 transition-all duration-300 hover:scale-105"
-                aria-label="Back to top"
                 title="Back to top"
               >
                 <ArrowUp size={16} />
@@ -248,8 +242,8 @@ const Footer: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-gray-400 text-sm italic max-w-2xl mx-auto">
-              "Secure, scalable, and compliant technology platforms — delivered
-              through executive leadership, governance discipline, and engineering depth."
+              "Driving digital transformation through strategic technology leadership, 
+              security excellence, and innovation that delivers measurable business value."
             </p>
           </div>
         </motion.div>
