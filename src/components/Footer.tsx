@@ -2,15 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
-  Phone,
   Linkedin,
   Github,
   MapPin,
   ArrowUp,
-  Heart,
-  Code,
   Shield,
   Cloud,
+  Code,
   Users
 } from 'lucide-react';
 
@@ -69,8 +67,8 @@ const Footer: React.FC = () => {
                   <span className="text-blue-400">Lumban</span> Sopian
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  Strategic IT Executive specializing in cybersecurity, cloud architecture, 
-                  and digital transformation leadership.
+                  Technology and Security Executive — cloud transformation,
+                  DevSecOps, Zero Trust, and regulated-industry governance.
                 </p>
                 
                 {/* Expertise Icons */}
@@ -152,19 +150,19 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold text-white mb-6">Professional Highlights</h3>
+                <h3 className="text-lg font-semibold text-white mb-6">Executive Profile</h3>
                 <div className="space-y-4">
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">15+</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">18+</div>
                     <div className="text-gray-400 text-sm">Years Experience</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-green-400 mb-1">70+</div>
-                    <div className="text-gray-400 text-sm">Team Members Led</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">70+</div>
+                    <div className="text-gray-400 text-sm">Engineers Led</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">$10M+</div>
-                    <div className="text-gray-400 text-sm">Budget Managed</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">$5M+</div>
+                    <div className="text-gray-400 text-sm">Annual Budget</div>
                   </div>
                 </div>
               </motion.div>
@@ -185,12 +183,8 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm text-center md:text-left"
             >
-              <p className="flex items-center justify-center md:justify-start space-x-1">
-                <span>© {currentYear} Lumban Sopian. Made with</span>
-                <Heart className="text-red-400" size={14} />
-                <span>and</span>
-                <Code className="text-blue-400" size={14} />
-                <span>for professional excellence.</span>
+              <p>
+                © {currentYear} Lumban Sopian — Technology &amp; Security Executive.
               </p>
             </motion.div>
 
@@ -253,8 +247,8 @@ const Footer: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-gray-400 text-sm italic max-w-2xl mx-auto">
-              "Driving digital transformation through strategic technology leadership, 
-              security excellence, and innovation that delivers measurable business value."
+              "Secure, scalable, and compliant technology platforms — delivered
+              through executive leadership, governance discipline, and engineering depth."
             </p>
           </div>
         </motion.div>

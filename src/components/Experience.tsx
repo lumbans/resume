@@ -1,202 +1,177 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Building, TrendingUp, Users, DollarSign, Shield } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-interface ExperienceItem {
-  title: string;
+interface Role {
   company: string;
-  achievements: string[];
-  technologies: string[];
-  metrics: {
-    icon: React.ReactNode;
-    value: string;
-    label: string;
-  }[];
+  title: string;
+  duration: string;
+  outcomes: string[];
+  scope: string;
+  technology: string;
 }
 
-const experienceData: ExperienceItem[] = [
+const ROLES: Role[] = [
   {
-    title: "Senior Vice President – Chief Information Security Officer (CISO)",
-    company: "PT. Bank Multiarta Sentosa",
-    achievements: [
-      "Lead comprehensive cybersecurity strategy for 20+ professionals across Infosec, QA, IT GRC, and DevOps divisions",
-      "Reduced security incidents by 30% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
-      "Orchestrated critical infrastructure migration from Direct Connect VGW to Transit Gateway, improving network performance by 20%",
-      "Established Zero Trust Architecture framework, achieving 99.9% system availability for critical banking services",
-      "Implemented comprehensive compliance program covering PCI DSS and OJK regulations, passing all external security audits"
+    company: 'PT Bank Multiarta Sentosa Tbk',
+    title: 'CISO / Head of Information Security & Application Management',
+    duration: 'Nov 2023 – Present',
+    outcomes: [
+      'Reduced security incidents by 40% through enterprise-grade DevSecOps and automated threat detection.',
+      'Achieved 99.95% availability for critical banking platforms via Zero Trust adoption and platform hardening.',
+      'Closed external audits with zero critical findings across PCI DSS and OJK regulatory frameworks.',
+      'Executed enterprise network migration from Direct Connect VGW to Transit Gateway, improving performance by 20%.',
     ],
-    technologies: ["DevSecOps", "Zero Trust Architecture", "AWS Transit Gateway", "PCI DSS", "Enterprise Security"],
-    metrics: [
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "$5M+", label: "Annual Security Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incidents Reduction" },
-      { icon: <Shield className="text-purple-400" size={20} />, value: "99.9%", label: "System Availability" }
-    ]
+    scope:
+      '20+ professionals across Infosec, QA, IT GRC, and DevOps · $5M+ annual security & technology budget · Board and audit-committee reporting',
+    technology:
+      'Zero Trust Architecture · Enterprise DevSecOps · AWS Transit Gateway · PCI DSS · OJK Compliance · ISMS',
   },
   {
-    title: "Principal DevOps Engineer",
-    company: "Lyte Ventures Pte. Ltd",
-    achievements: [
-      "Architected and implemented scalable cloud-native solutions using AWS CDK with C#, serving 1M+ daily active users",
-      "Reduced cloud operational costs by 30% through infrastructure optimization and automated resource scaling policies",
-      "Conducted comprehensive security assessments and implemented DevSecOps best practices, achieving SOC 2 compliance",
-      "Designed Infrastructure as Code (IaC) templates for automated deployment, reducing provisioning time from 4 hours to 30 minutes"
+    company: 'Lyte Ventures Pte. Ltd',
+    title: 'Principal DevOps Engineer',
+    duration: 'Oct 2022 – Sep 2023',
+    outcomes: [
+      'Reduced cloud operational costs by 30% through architectural optimisation and automated scaling policies.',
+      'Drove SOC 2 readiness, embedding DevSecOps practice into the engineering lifecycle.',
+      'Cut provisioning time from 4 hours to 30 minutes via Infrastructure-as-Code templating.',
     ],
-    technologies: ["AWS CDK", "C#", "Infrastructure as Code", "DevSecOps", "SOC 2 Compliance"],
-    metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "1M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Cost Reduction" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "4h→30m", label: "Provisioning Time" }
-    ]
+    scope:
+      'Cloud-native architecture for a regional fintech platform serving 1M+ daily active users',
+    technology:
+      'AWS CDK (C#) · Infrastructure as Code · SOC 2 · DevSecOps tooling',
   },
   {
-    title: "VP - IT Service & Infrastructure Division Head",
-    company: "PT Bank Jago Tbk",
-    achievements: [
-      "Managed hybrid infrastructure, led server room migrations, and acted as Head of IT Security. Led server room migrationsi achieving a 99.9% uptime for critical banking services",
-      "Successfully coordinated disaster recovery simulations, improving system resilience by 25%",
-      "Led the implementation of Endpoint Protection and Data Loss Prevention (DLP) across the organization."
+    company: 'PT Bank Jago Tbk',
+    title: 'Head of IT Infrastructure & Service Management',
+    duration: 'Oct 2021 – Sep 2022',
+    outcomes: [
+      'Sustained 99.9% uptime for critical banking services through hybrid-infrastructure leadership and server-room migrations.',
+      'Improved disaster-recovery posture by 25% via simulation-driven resilience programme.',
+      'Rolled out enterprise endpoint protection and DLP across the organisation.',
     ],
-    technologies: ["Infosec", "Trendmicro DLP Endpoint Protection", "VMware", "Solarwinds", "GCP", "GKE", "Cloudflare"],
-    metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "2M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incident" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "<1h", label: "Less down Time" }
-    ]
+    scope:
+      'Hybrid on-premise and cloud infrastructure · acted as Head of IT Security · 2M+ daily active users supported',
+    technology:
+      'VMware · GCP · GKE · Trend Micro DLP & Endpoint Protection · SolarWinds · Cloudflare',
   },
   {
-    title: "Vice President - DevOps Division Head",
-    company: "PT Fintek Karya Nusantara (LinkAja)",
-    achievements: [
-      "Led 70+ professionals across SRE, QA, Automation Engineering, and Monitoring teams, managing $10M+ annual infrastructure budget",
-      "Implemented comprehensive CI/CD pipelines using GitLab CI, Helm Charts, and Kubernetes on AWS EKS, serving 50M+ users",
-      "Improved system stability and reduced downtime by 35% through proactive monitoring and automated incident response",
-      "Completed full digital payment platform migration and CI/CD implementation in 18 months, supporting 300% user growth"
+    company: 'PT Fintek Karya Nusantara (LinkAja)',
+    title: 'VP, DevOps Division Head',
+    duration: 'Aug 2019 – Oct 2021',
+    outcomes: [
+      'Led complete digital payment platform migration and CI/CD modernisation, supporting 300% user growth.',
+      'Reduced platform downtime by 35% through proactive observability and automated incident response.',
+      'Delivered end-to-end transformation in 18 months for a platform serving 50M+ users.',
     ],
-    technologies: ["GitLab CI", "Kubernetes", "AWS EKS", "Helm Charts", "SRE", "Automation Engineering"],
-    metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "70+", label: "Team Members" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "$10M+", label: "Annual Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "50M+", label: "Users Served" }
-    ]
-  }
+    scope:
+      '70+ professionals across SRE, QA, Automation Engineering, and Monitoring · $10M+ annual infrastructure budget · Executive committee membership',
+    technology:
+      'GitLab CI · AWS EKS · Kubernetes · Helm · SRE practice · Microservices',
+  },
+  {
+    company: 'Grab',
+    title: 'DevOps Engineering Manager',
+    duration: 'Jun 2016 – Jul 2019',
+    outcomes: [
+      'Migrated 600+ workloads from on-premise infrastructure to AWS using Terraform and Ansible.',
+      'Cut deployment time from hours to minutes via modernised CI/CD pipelines.',
+      'Introduced Kubernetes adoption across regional microservices platforms to improve scalability and operational efficiency.',
+    ],
+    scope:
+      '25-member DevOps team supporting regional engineering operations across Southeast Asia',
+    technology:
+      'AWS · Terraform · Ansible · Kubernetes · Regional microservices platforms',
+  },
+  {
+    company: 'Earlier Infrastructure & DevOps Engineering Roles',
+    title: 'Engineering, Systems, and Infrastructure Foundations',
+    duration: '2007 – 2015',
+    outcomes: [
+      'Built the operational foundation — Linux, networking, virtualisation, and early cloud experience — that underwrites later executive scope.',
+    ],
+    scope:
+      'Multiple infrastructure and DevOps roles across enterprise and service-provider environments',
+    technology: 'Linux · Networking · Virtualisation · Early-generation cloud platforms',
+  },
 ];
 
-const Experience: React.FC = () => {
+const Experience = () => {
   const [ref, inView] = useScrollReveal();
 
   return (
-    <section id="experience" className="py-20 bg-slate-800/50">
+    <section id="experience" className="py-20 bg-slate-800/30">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Professional <span className="text-blue-400">Experience</span>
+          <div className="text-blue-400 text-xs tracking-[0.18em] uppercase mb-3">
+            Career Highlights
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            Eighteen years of technology and security leadership
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            15+ years of strategic leadership in IT, driving digital transformation 
-            and innovation across financial institutions and technology companies
+          <p className="text-gray-400 leading-relaxed">
+            Executive and senior engineering mandates across regulated banking,
+            regional fintech, and enterprise platform organisations.
           </p>
         </motion.div>
 
-        <div className="space-y-12">
-          {experienceData.map((experience, index) => (
-            <motion.div
-              key={experience.company}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300"
+        <div className="space-y-6">
+          {ROLES.map((role, i) => (
+            <motion.article
+              key={role.company}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="bg-slate-900/60 border border-slate-700/60 rounded-lg p-6 lg:p-8"
             >
-              <div className="grid lg:grid-cols-3 gap-8">
-                {/* Left Column - Role Info */}
-                <div className="lg:col-span-1">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <Building className="text-blue-400" size={24} />
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-1">
-                        {experience.title}
-                      </h3>
-                      <div className="text-blue-400 font-semibold">
-                        {experience.company}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Key Metrics */}
-                  <div className="space-y-3">
-                    {experience.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex items-center space-x-3">
-                        {metric.icon}
-                        <div>
-                          <div className="text-white font-semibold">{metric.value}</div>
-                          <div className="text-gray-400 text-sm">{metric.label}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10">
+                <header>
+                  <h3 className="text-xl font-bold text-white mb-1 leading-snug">
+                    {role.title}
+                  </h3>
+                  <div className="text-blue-400 font-medium mb-2">{role.company}</div>
+                  <div className="text-sm text-gray-500">{role.duration}</div>
+                </header>
 
-                {/* Middle Column - Achievements */}
-                <div className="lg:col-span-2">
-                  <h4 className="text-lg font-semibold text-white mb-4">Key Achievements</h4>
-                  <ul className="space-y-3 mb-6">
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <li key={achievementIndex} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 leading-relaxed">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Technologies */}
+                <div className="space-y-5">
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-3">Technologies & Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-600/30"
-                        >
-                          {tech}
-                        </span>
+                    <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-3">
+                      Key Business Outcomes
+                    </div>
+                    <ul className="space-y-2.5">
+                      {role.outcomes.map((o) => (
+                        <li key={o} className="flex gap-3 text-gray-300 leading-relaxed">
+                          <span className="text-blue-400 mt-2.5 shrink-0 w-1.5 h-1.5 rounded-full bg-blue-400" />
+                          <span>{o}</span>
+                        </li>
                       ))}
+                    </ul>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-700/50">
+                    <div>
+                      <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-2">
+                        Leadership Scope
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed">{role.scope}</p>
+                    </div>
+                    <div>
+                      <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-2">
+                        Technology Impact
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed">{role.technology}</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Drive Your Next Digital Transformation?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              With proven expertise in leading large-scale transformations and managing multi-million dollar budgets, 
-              I'm ready to help your organization achieve its technology goals.
-            </p>
-            <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Let's Connect
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

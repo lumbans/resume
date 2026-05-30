@@ -1,38 +1,54 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import './App.css';
 import Header from './components/Header';
 import SectionNav from './components/SectionNav';
 import Hero from './components/Hero';
+import ExecutiveImpact from './components/ExecutiveImpact';
+import ProfessionalSummary from './components/ProfessionalSummary';
+import Leadership from './components/Leadership';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Achievements from './components/Achievements';
+import Expertise from './components/Expertise';
+import SecurityGovernance from './components/SecurityGovernance';
 import Certifications from './components/Certifications';
+import Education from './components/Education';
+import Research from './components/Research';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <Header />
-        <SectionNav />
-        <main>
-          <Routes>
-            <Route path="/resume/" element={
-              <>
-                <Hero />
-                <Experience />
-                <Skills />
-                <Achievements />
-                <Certifications />
-                <Contact />
-              </>
-            } />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <div className="min-h-screen bg-slate-950 text-white">
+          <Header />
+          <SectionNav />
+          <main>
+            <Routes>
+              <Route
+                path="/resume/"
+                element={
+                  <>
+                    <Hero />
+                    <ExecutiveImpact />
+                    <ProfessionalSummary />
+                    <Leadership />
+                    <Experience />
+                    <Expertise />
+                    <SecurityGovernance />
+                    <Certifications />
+                    <Education />
+                    <Research />
+                    <Contact />
+                  </>
+                }
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </MotionConfig>
   );
 }
 

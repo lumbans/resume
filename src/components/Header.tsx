@@ -3,10 +3,11 @@ import { Menu, X, Mail, Linkedin, Phone, Github } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'About', id: 'hero' },
-  { label: 'Experience', id: 'experience' },
-  { label: 'Skills', id: 'skills' },
-  { label: 'Achievements', id: 'achievements' },
-  { label: 'Certifications', id: 'certifications' },
+  { label: 'Impact', id: 'impact' },
+  { label: 'Leadership', id: 'leadership' },
+  { label: 'Career', id: 'experience' },
+  { label: 'Expertise', id: 'expertise' },
+  { label: 'Credentials', id: 'certifications' },
   { label: 'Contact', id: 'contact' }
 ];
 

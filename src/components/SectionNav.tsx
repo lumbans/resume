@@ -3,10 +3,15 @@ import { ChevronUp, ChevronDown } from 'lucide-react';
 
 const SECTION_IDS = [
   'hero',
+  'impact',
+  'summary',
+  'leadership',
   'experience',
-  'skills',
-  'achievements',
+  'expertise',
+  'security',
   'certifications',
+  'education',
+  'research',
   'contact',
 ];
 
