@@ -71,7 +71,7 @@ const certifications: Certification[] = [
   },
   {
     id: 'aws-solutions-architect',
-    name: 'AWS Solutions Architect Associate',
+    name: 'AWS Solutions Architect Associates',
     issuer: 'Amazon Web Services',
     year: '2026',
     status: 'completed',
