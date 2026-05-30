@@ -142,45 +142,63 @@ const Contact: React.FC = () => {
                   style={{ display: 'none' }}
                 />
 
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Full Name"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                />
+                <div>
+                  <label htmlFor="contact-name" className="sr-only">Full Name</label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Full Name"
+                    autoComplete="name"
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  />
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                />
+                <div>
+                  <label htmlFor="contact-email" className="sr-only">Email Address</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Email Address"
+                    autoComplete="email"
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  placeholder="Subject"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                />
+                <div>
+                  <label htmlFor="contact-subject" className="sr-only">Subject</label>
+                  <input
+                    id="contact-subject"
+                    type="text"
+                    name="subject"
+                    required
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Subject"
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  />
+                </div>
 
-                <textarea
-                  name="message"
-                  required
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none"
-                />
+                <div>
+                  <label htmlFor="contact-message" className="sr-only">Your Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Your Message"
+                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none"
+                  />
+                </div>
 
                 <button
                   type="submit"

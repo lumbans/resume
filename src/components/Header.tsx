@@ -97,6 +97,9 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
             className="md:hidden text-white"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -105,7 +108,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 py-4 border-t border-gray-700">
+          <nav id="mobile-nav" className="md:hidden mt-4 py-4 border-t border-gray-700">
             <div className="flex flex-col space-y-4">
               {NAV_ITEMS.map((item) => (
                 <button
