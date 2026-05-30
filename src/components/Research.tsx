@@ -29,16 +29,16 @@ const Research = () => {
   const [ref, inView] = useScrollReveal();
 
   return (
-    <section id="research" className="py-20 bg-slate-900/60">
+    <section id="research" className="py-20 bg-slate-800/30">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7 }}
           className="max-w-3xl mb-12"
         >
-          <div className="text-blue-400 text-xs tracking-[0.18em] uppercase mb-3">
+          <div className="text-blue-400 text-xs tracking-[0.2em] uppercase mb-3">
             Research &amp; Thought Leadership
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -54,21 +54,21 @@ const Research = () => {
 
         <div className="grid lg:grid-cols-2 gap-6">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-slate-800/40 border border-slate-700/60 rounded-lg p-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-gradient-to-br from-blue-600/10 to-purple-600/10 backdrop-blur-md border border-blue-500/20 rounded-2xl p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="text-blue-400">
+              <div className="text-blue-300">
                 <BookOpen size={22} />
               </div>
               <h3 className="text-lg font-semibold text-white">Current Focus Areas</h3>
             </div>
             <ul className="space-y-3">
               {FOCUS_AREAS.map((f) => (
-                <li key={f} className="flex gap-3 text-gray-300">
-                  <span className="text-blue-400 mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                <li key={f} className="flex gap-3 text-gray-200">
+                  <span className="text-blue-300 mt-2 w-1.5 h-1.5 rounded-full bg-blue-300 shrink-0" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -76,13 +76,13 @@ const Research = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-slate-800/40 border border-slate-700/60 rounded-lg p-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-slate-900/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="text-blue-400">
+              <div className="text-purple-400">
                 <GraduationCap size={22} />
               </div>
               <h3 className="text-lg font-semibold text-white">Academic Development</h3>

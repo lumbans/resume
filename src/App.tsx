@@ -5,13 +5,10 @@ import Header from './components/Header';
 import SectionNav from './components/SectionNav';
 import Hero from './components/Hero';
 import ExecutiveImpact from './components/ExecutiveImpact';
-import ProfessionalSummary from './components/ProfessionalSummary';
 import Leadership from './components/Leadership';
 import Experience from './components/Experience';
 import Expertise from './components/Expertise';
-import SecurityGovernance from './components/SecurityGovernance';
-import Certifications from './components/Certifications';
-import Education from './components/Education';
+import Credentials from './components/Credentials';
 import Research from './components/Research';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -31,13 +28,10 @@ function App() {
                   <>
                     <Hero />
                     <ExecutiveImpact />
-                    <ProfessionalSummary />
                     <Leadership />
                     <Experience />
                     <Expertise />
-                    <SecurityGovernance />
-                    <Certifications />
-                    <Education />
+                    <Credentials />
                     <Research />
                     <Contact />
                   </>

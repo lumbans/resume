@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Building } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface Role {
@@ -7,7 +8,7 @@ interface Role {
   duration: string;
   outcomes: string[];
   scope: string;
-  technology: string;
+  technology: string[];
 }
 
 const ROLES: Role[] = [
@@ -23,8 +24,14 @@ const ROLES: Role[] = [
     ],
     scope:
       '20+ professionals across Infosec, QA, IT GRC, and DevOps · $5M+ annual security & technology budget · Board and audit-committee reporting',
-    technology:
-      'Zero Trust Architecture · Enterprise DevSecOps · AWS Transit Gateway · PCI DSS · OJK Compliance · ISMS',
+    technology: [
+      'Zero Trust Architecture',
+      'Enterprise DevSecOps',
+      'AWS Transit Gateway',
+      'PCI DSS',
+      'OJK Compliance',
+      'ISMS',
+    ],
   },
   {
     company: 'Lyte Ventures Pte. Ltd',
@@ -37,8 +44,7 @@ const ROLES: Role[] = [
     ],
     scope:
       'Cloud-native architecture for a regional fintech platform serving 1M+ daily active users',
-    technology:
-      'AWS CDK (C#) · Infrastructure as Code · SOC 2 · DevSecOps tooling',
+    technology: ['AWS CDK (C#)', 'Infrastructure as Code', 'SOC 2', 'DevSecOps Tooling'],
   },
   {
     company: 'PT Bank Jago Tbk',
@@ -51,8 +57,15 @@ const ROLES: Role[] = [
     ],
     scope:
       'Hybrid on-premise and cloud infrastructure · acted as Head of IT Security · 2M+ daily active users supported',
-    technology:
-      'VMware · GCP · GKE · Trend Micro DLP & Endpoint Protection · SolarWinds · Cloudflare',
+    technology: [
+      'VMware',
+      'GCP',
+      'GKE',
+      'Trend Micro DLP',
+      'Endpoint Protection',
+      'SolarWinds',
+      'Cloudflare',
+    ],
   },
   {
     company: 'PT Fintek Karya Nusantara (LinkAja)',
@@ -65,8 +78,7 @@ const ROLES: Role[] = [
     ],
     scope:
       '70+ professionals across SRE, QA, Automation Engineering, and Monitoring · $10M+ annual infrastructure budget · Executive committee membership',
-    technology:
-      'GitLab CI · AWS EKS · Kubernetes · Helm · SRE practice · Microservices',
+    technology: ['GitLab CI', 'AWS EKS', 'Kubernetes', 'Helm', 'SRE Practice', 'Microservices'],
   },
   {
     company: 'Grab',
@@ -79,8 +91,7 @@ const ROLES: Role[] = [
     ],
     scope:
       '25-member DevOps team supporting regional engineering operations across Southeast Asia',
-    technology:
-      'AWS · Terraform · Ansible · Kubernetes · Regional microservices platforms',
+    technology: ['AWS', 'Terraform', 'Ansible', 'Kubernetes', 'Regional Microservices'],
   },
   {
     company: 'Earlier Infrastructure & DevOps Engineering Roles',
@@ -91,7 +102,7 @@ const ROLES: Role[] = [
     ],
     scope:
       'Multiple infrastructure and DevOps roles across enterprise and service-provider environments',
-    technology: 'Linux · Networking · Virtualisation · Early-generation cloud platforms',
+    technology: ['Linux', 'Networking', 'Virtualisation', 'Early Cloud Platforms'],
   },
 ];
 
@@ -99,16 +110,16 @@ const Experience = () => {
   const [ref, inView] = useScrollReveal();
 
   return (
-    <section id="experience" className="py-20 bg-slate-800/30">
+    <section id="experience" className="py-20 bg-slate-900/60">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7 }}
           className="max-w-3xl mb-12"
         >
-          <div className="text-blue-400 text-xs tracking-[0.18em] uppercase mb-3">
+          <div className="text-blue-400 text-xs tracking-[0.2em] uppercase mb-3">
             Career Highlights
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -124,23 +135,30 @@ const Experience = () => {
           {ROLES.map((role, i) => (
             <motion.article
               key={role.company}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="bg-slate-900/60 border border-slate-700/60 rounded-lg p-6 lg:p-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: i * 0.07 }}
+              className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10">
                 <header>
-                  <h3 className="text-xl font-bold text-white mb-1 leading-snug">
-                    {role.title}
-                  </h3>
-                  <div className="text-blue-400 font-medium mb-2">{role.company}</div>
-                  <div className="text-sm text-gray-500">{role.duration}</div>
+                  <div className="flex items-start gap-3 mb-3">
+                    <Building className="text-blue-400 mt-1 shrink-0" size={22} />
+                    <div>
+                      <h3 className="text-xl font-bold text-white leading-snug">
+                        {role.title}
+                      </h3>
+                      <div className="text-blue-400 font-medium mt-1">
+                        {role.company}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-500 ml-9">{role.duration}</div>
                 </header>
 
                 <div className="space-y-5">
                   <div>
-                    <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-3">
+                    <div className="text-xs tracking-[0.2em] uppercase text-blue-400 mb-3">
                       Key Business Outcomes
                     </div>
                     <ul className="space-y-2.5">
@@ -153,18 +171,27 @@ const Experience = () => {
                     </ul>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-700/50">
+                  <div className="pt-4 border-t border-slate-700/50 space-y-4">
                     <div>
-                      <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-2">
+                      <div className="text-xs tracking-[0.2em] uppercase text-blue-400 mb-2">
                         Leadership Scope
                       </div>
                       <p className="text-sm text-gray-400 leading-relaxed">{role.scope}</p>
                     </div>
                     <div>
-                      <div className="text-xs tracking-[0.18em] uppercase text-blue-400 mb-2">
+                      <div className="text-xs tracking-[0.2em] uppercase text-blue-400 mb-2">
                         Technology Impact
                       </div>
-                      <p className="text-sm text-gray-400 leading-relaxed">{role.technology}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {role.technology.map((t) => (
+                          <span
+                            key={t}
+                            className="px-3 py-1 bg-blue-600/15 text-blue-300 rounded-full text-xs border border-blue-500/30"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

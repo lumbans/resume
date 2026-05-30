@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
+            <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Send a Message
               </h3>
@@ -228,7 +228,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
+            <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Contact Information
               </h3>
