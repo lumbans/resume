@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { 
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import {
   Cloud, 
   Shield, 
   Settings, 
@@ -117,10 +117,7 @@ const skillCategories: SkillCategory[] = [
 
 const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('cloud');
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useScrollReveal();
 
   const getColorClasses = (color: string) => {
     const colorMap = {

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Mail, Linkedin, Phone } from 'lucide-react';
 
+const NAV_ITEMS = [
+  { label: 'About', id: 'hero' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Achievements', id: 'achievements' },
+  { label: 'Certifications', id: 'certifications' },
+  { label: 'Contact', id: 'contact' }
+];
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,6 +21,15 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -38,14 +56,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {[
-              { label: 'About', id: 'hero' },
-              { label: 'Experience', id: 'experience' },
-              { label: 'Skills', id: 'skills' },
-              { label: 'Achievements', id: 'achievements' },
-              { label: 'Certifications', id: 'certifications' },
-              { label: 'Contact', id: 'contact' }
-            ].map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -87,14 +98,7 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 py-4 border-t border-gray-700">
             <div className="flex flex-col space-y-4">
-              {[
-                { label: 'About', id: 'hero' },
-                { label: 'Experience', id: 'experience' },
-                { label: 'Skills', id: 'skills' },
-                { label: 'Achievements', id: 'achievements' },
-                { label: 'Certifications', id: 'certifications' },
-                { label: 'Contact', id: 'contact' }
-              ].map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}

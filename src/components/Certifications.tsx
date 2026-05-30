@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { 
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import {
   Award, 
   GraduationCap, 
   Calendar, 
@@ -141,10 +141,7 @@ const professionalDevelopment = [
 ];
 
 const Certifications: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useScrollReveal();
 
   const getStatusColor = (status: string) => {
     switch (status) {

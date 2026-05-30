@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { 
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import {
   TrendingUp, 
   Shield, 
   DollarSign, 
@@ -119,10 +119,7 @@ const achievements: Achievement[] = [
 ];
 
 const Achievements: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useScrollReveal();
 
   return (
     <section id="achievements" className="py-20 bg-slate-800/30">

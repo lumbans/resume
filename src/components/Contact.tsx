@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import {
   Mail,
   Linkedin,
@@ -10,6 +9,10 @@ import {
   AlertCircle,
   Clock
 } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+
+const FORM_ENDPOINT =
+  import.meta.env.VITE_FORM_ENDPOINT ?? 'https://formspree.io/f/xojnenow';
 
 interface ContactForm {
   name: string;
@@ -19,10 +22,7 @@ interface ContactForm {
 }
 
 const Contact: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useScrollReveal();
 
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('https://formspree.io/f/xojnenow', {
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -187,7 +187,10 @@ const Contact: React.FC = () => {
                   className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold rounded-lg flex items-center justify-center space-x-2 transition-all"
                 >
                   {isSubmitting ? (
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
+                      <span>Sending…</span>
+                    </>
                   ) : (
                     <>
                       <Send size={18} />

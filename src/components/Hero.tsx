@@ -1,22 +1,15 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Shield, Cloud, Users, TrendingUp } from 'lucide-react';
+import { ChevronDown, Shield, Cloud, Users } from 'lucide-react';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const scrollToNext = () => {
     document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section 
-      id="hero" 
-      className="relative min-h-screen flex items-center justify-center"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/resume/images/hero-background.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+    <section
+      id="hero"
+      className="hero-background relative min-h-screen flex items-center justify-center"
     >
       <div className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -123,6 +116,7 @@ const Hero: React.FC = () => {
               <img
                 src="/resume/images/professional-headshot.jpg"
                 alt="Lumban Sopian - IT Executive"
+                loading="lazy"
                 className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
               />
             </div>

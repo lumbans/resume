@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Building, Calendar, TrendingUp, Users, DollarSign, Shield } from 'lucide-react';
+import { Building, TrendingUp, Users, DollarSign, Shield } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ExperienceItem {
   title: string;
@@ -83,10 +83,7 @@ const experienceData: ExperienceItem[] = [
 ];
 
 const Experience: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useScrollReveal();
 
   return (
     <section id="experience" className="py-20 bg-slate-800/50">

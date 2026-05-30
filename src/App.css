@@ -121,6 +121,16 @@ select:focus {
   background-size: 20px 20px;
 }
 
+/* Hero background image with darkening overlay */
+.hero-background {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    url('/resume/images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Glass morphism effect */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
