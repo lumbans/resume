@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, Linkedin, Phone } from 'lucide-react';
+import { Menu, X, Mail, Linkedin, Phone, Github } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'About', id: 'hero' },
@@ -75,13 +75,21 @@ const Header: React.FC = () => {
             >
               <Mail size={20} />
             </a>
-            <a 
+            <a
               href="https://www.linkedin.com/in/lumbans"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-blue-400 transition-colors"
             >
               <Linkedin size={20} />
+            </a>
+            <a
+              href="https://github.com/lumbans"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-blue-400 transition-colors"
+            >
+              <Github size={20} />
             </a>
           </div>
 
@@ -116,7 +124,7 @@ const Header: React.FC = () => {
                 >
                   <Mail size={20} />
                 </a>
-                <a 
+                <a
                   href="https://www.linkedin.com/in/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -124,7 +132,15 @@ const Header: React.FC = () => {
                 >
                   <Linkedin size={20} />
                 </a>
-                <a 
+                <a
+                  href="https://github.com/lumbans"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
+                  <Github size={20} />
+                </a>
+                <a
                   href="tel:+6282122428287"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >

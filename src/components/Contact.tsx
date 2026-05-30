@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Mail,
   Linkedin,
+  Github,
   MapPin,
   Send,
   CheckCircle,
@@ -234,6 +235,18 @@ const Contact: React.FC = () => {
                     className="text-blue-400 hover:underline"
                   >
                     linkedin.com/in/lumbans
+                  </a>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <Github className="text-gray-300" size={22} />
+                  <a
+                    href="https://github.com/lumbans"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:underline"
+                  >
+                    github.com/lumbans
                   </a>
                 </div>
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  Linkedin, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  MapPin,
   ArrowUp,
   Heart,
   Code,
@@ -39,6 +40,7 @@ const Footer: React.FC = () => {
   const contactInfo = [
     { icon: <Mail size={16} />, label: 'lumban.sopian@msn.com', href: 'mailto:lumban.sopian@msn.com' },
     { icon: <Linkedin size={16} />, label: 'linkedin.com/in/lumbans', href: 'https://www.linkedin.com/in/lumbans' },
+    { icon: <Github size={16} />, label: 'github.com/lumbans', href: 'https://github.com/lumbans' },
     { icon: <MapPin size={16} />, label: 'Tangerang, Banten, Indonesia', href: null }
   ];
 
@@ -216,6 +218,15 @@ const Footer: React.FC = () => {
                   title="LinkedIn"
                 >
                   <Linkedin size={18} />
+                </a>
+                <a
+                  href="https://github.com/lumbans"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  title="GitHub"
+                >
+                  <Github size={18} />
                 </a>
               </div>
 
