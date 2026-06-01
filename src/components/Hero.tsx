@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Shield, Cloud, Users, TrendingUp } from 'lucide-react';
+import { ChevronDown, Shield, Cloud, Users } from 'lucide-react';
+import CountUp from './CountUp';
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
@@ -22,9 +23,9 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="text-white"
           >
             {/* Executive Title */}
@@ -52,9 +53,10 @@ const Hero: React.FC = () => {
               className="mb-8"
             >
               <p className="text-lg text-gray-200 leading-relaxed mb-6">
-                Strategic Technology &amp; Security Executive with <span className="text-blue-400 font-semibold">18+ years</span> of
-                experience leading cybersecurity, cloud transformation, DevSecOps, and platform engineering initiatives
-                across banking, fintech, and enterprise organizations.
+                Technology &amp; security executive with <span className="text-blue-400 font-semibold">18+ years</span> building
+                and securing mission-critical platforms in regulated banking and fintech. I lead at the intersection of
+                cybersecurity, cloud, and platform engineering &mdash; translating regulatory and resilience mandates into
+                measurable business outcomes.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Currently serving as <span className="text-blue-400 font-semibold">Division Head</span> at
@@ -62,8 +64,8 @@ const Hero: React.FC = () => {
                 regulatory compliance, and digital transformation programs.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Proven track record leading teams of up to <span className="text-blue-400 font-semibold">70+ engineers</span> and
-                managing technology budgets exceeding <span className="text-blue-400 font-semibold">USD 5M</span>, while
+                Proven track record leading engineering organizations of up to <span className="text-blue-400 font-semibold">70+ professionals</span> and
+                managing technology budgets of up to <span className="text-blue-400 font-semibold">USD 10M+</span>, while
                 delivering 40% reduction in security incidents, 30% cloud cost optimization, 50% MTTR improvement, and
                 sustained 99.95%+ service availability.
               </p>
@@ -77,19 +79,27 @@ const Hero: React.FC = () => {
               className="grid grid-cols-2 gap-6 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">18+</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">
+                  <CountUp to={18} suffix="+" />
+                </div>
                 <div className="text-sm text-gray-300">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">70+</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">
+                  <CountUp to={70} suffix="+" />
+                </div>
                 <div className="text-sm text-gray-300">Team Members Led</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">$5M+</div>
-                <div className="text-sm text-gray-300">Annual Budget</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">
+                  <CountUp to={10} prefix="$" suffix="M+" />
+                </div>
+                <div className="text-sm text-gray-300">Budget Managed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">50M+</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">
+                  <CountUp to={50} suffix="M+" />
+                </div>
                 <div className="text-sm text-gray-300">Users Served</div>
               </div>
             </motion.div>
@@ -113,14 +123,21 @@ const Hero: React.FC = () => {
               >
                 View Experience
               </button>
+              <a
+                href="/resume/Lumban-Sopian-CV.pdf"
+                download
+                className="px-8 py-3 border-2 border-slate-400 text-slate-200 hover:bg-slate-200 hover:text-slate-900 font-semibold rounded-lg transition-all duration-300 text-center"
+              >
+                Download CV
+              </a>
             </motion.div>
           </motion.div>
 
           {/* Right Column - Professional Image & Highlights */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
             className="relative"
           >
             {/* Professional Image */}
@@ -143,8 +160,8 @@ const Hero: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Shield className="text-blue-400" size={24} />
                 <div>
-                  <div className="text-white font-semibold">Division Head</div>
-                  <div className="text-gray-300 text-sm">Security Leader</div>
+                  <div className="text-white font-semibold">99.95%</div>
+                  <div className="text-gray-300 text-sm">Service Availability</div>
                 </div>
               </div>
             </motion.div>
@@ -158,8 +175,8 @@ const Hero: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Cloud className="text-blue-400" size={24} />
                 <div>
-                  <div className="text-white font-semibold">AWS</div>
-                  <div className="text-gray-300 text-sm">Cloud Expert</div>
+                  <div className="text-white font-semibold">30%</div>
+                  <div className="text-gray-300 text-sm">Cloud Cost Saved</div>
                 </div>
               </div>
             </motion.div>
@@ -173,8 +190,8 @@ const Hero: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Users className="text-blue-400" size={24} />
                 <div>
-                  <div className="text-white font-semibold">DevOps</div>
-                  <div className="text-gray-300 text-sm">Team Leader</div>
+                  <div className="text-white font-semibold">70+</div>
+                  <div className="text-gray-300 text-sm">Engineers Led</div>
                 </div>
               </div>
             </motion.div>

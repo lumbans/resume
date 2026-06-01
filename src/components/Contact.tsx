@@ -139,6 +139,9 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   name="_gotcha"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
                   style={{ display: 'none' }}
                 />
 
@@ -146,6 +149,7 @@ const Contact: React.FC = () => {
                   type="text"
                   name="name"
                   required
+                  aria-label="Full Name"
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Full Name"
@@ -156,6 +160,7 @@ const Contact: React.FC = () => {
                   type="email"
                   name="email"
                   required
+                  aria-label="Email Address"
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email Address"
@@ -166,6 +171,7 @@ const Contact: React.FC = () => {
                   type="text"
                   name="subject"
                   required
+                  aria-label="Subject"
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="Subject"
@@ -176,6 +182,7 @@ const Contact: React.FC = () => {
                   name="message"
                   required
                   rows={5}
+                  aria-label="Your Message"
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Your Message"

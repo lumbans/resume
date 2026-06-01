@@ -95,11 +95,11 @@ const certifications: Certification[] = [
 
 const education: Education[] = [
   {
-    degree: 'Master of Business Administraiton',
-    institution: 'University of People',
+    degree: 'Master of Business Administration',
+    institution: 'University of the People',
     period: '2025 - Present',
     status: 'Current Studies',
-    description: 'Master of Business Administrator.'
+    description: 'MBA program focused on strategic management and technology leadership.'
   },
   {
     degree: 'Master of Computer Science',
@@ -364,7 +364,7 @@ const Certifications: React.FC = () => {
               </div>
               <div className="text-center">
                 <GraduationCap className="mx-auto text-blue-400 mb-3" size={32} />
-                <div className="text-2xl font-bold text-white mb-1">4</div>
+                <div className="text-2xl font-bold text-white mb-1">3</div>
                 <div className="text-gray-400">Degrees</div>
               </div>
               <div className="text-center">

@@ -6,6 +6,7 @@ import { Building, Calendar, TrendingUp, Users, DollarSign, Shield } from 'lucid
 interface ExperienceItem {
   title: string;
   company: string;
+  period?: string;
   achievements: string[];
   technologies: string[];
   metrics: {
@@ -19,8 +20,9 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Senior Vice President – Division Head",
     company: "PT. Bank Multiarta Sentosa",
+    period: "Sep 2023 – Present",
     achievements: [
-      "Lead comprehensive cybersecurity strategy for 20+ professionals across Infosec, QA, IT GRC, and DevOps divisions",
+      "Own enterprise security and technology governance for a regulated bank, directing 20+ professionals across InfoSec, QA, IT GRC, and DevOps — accountable for security posture, regulatory standing, and operational resilience",
       "Reduced security incidents by 40% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
       "Orchestrated critical infrastructure migration from Direct Connect VGW to Transit Gateway, improving network performance by 20%",
       "Established Zero Trust Architecture framework, achieving 99.95% system availability for critical banking services",
@@ -36,6 +38,7 @@ const experienceData: ExperienceItem[] = [
   {
     title: "Principal DevOps Engineer",
     company: "Lyte Ventures Pte. Ltd",
+    period: "Oct 2022 – Oct 2023",
     achievements: [
       "Architected and implemented scalable cloud-native solutions using AWS CDK with C#, serving 1M+ daily active users",
       "Reduced cloud operational costs by 30% through infrastructure optimization and automated resource scaling policies",
@@ -52,23 +55,25 @@ const experienceData: ExperienceItem[] = [
   {
     title: "VP - IT Service & Infrastructure Division Head",
     company: "PT Bank Jago Tbk",
+    period: "Dec 2021 – Dec 2022",
     achievements: [
-      "Managed hybrid infrastructure, led server room migrations, and acted as Head of IT Security. Led server room migrationsi achieving a 99.9% uptime for critical banking services",
-      "Successfully coordinated disaster recovery simulations, improving system resilience by 25%",
-      "Led the implementation of Endpoint Protection and Data Loss Prevention (DLP) across the organization."
+      "Managed hybrid infrastructure and led server room migrations as Head of IT Security, sustaining 99.9% uptime for critical banking services",
+      "Coordinated disaster recovery simulations, improving system resilience by 25%",
+      "Led the enterprise-wide rollout of Endpoint Protection and Data Loss Prevention (DLP)"
     ],
-    technologies: ["Infosec", "Trendmicro DLP Endpoint Potenction", "VMWAREe", "Solarwinds", "GCP", "GKE", "Cloudflare"],
+    technologies: ["InfoSec", "Trend Micro DLP & Endpoint Protection", "VMware", "SolarWinds", "GCP", "GKE", "Cloudflare"],
     metrics: [
       { icon: <Users className="text-orange-400" size={20} />, value: "2M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Security Incident" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "<1h", label: "Less down Time" }
+      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Incident Reduction" },
+      { icon: <DollarSign className="text-green-400" size={20} />, value: "<1h", label: "Recovery Time" }
     ]
   },
   {
     title: "Vice President - DevOps Division Head",
     company: "PT Fintek Karya Nusantara (LinkAja)",
+    period: "Aug 2019 – Oct 2021",
     achievements: [
-      "Led 70+ professionals across SRE, QA, Automation Engineering, and Monitoring teams, managing $10M+ annual infrastructure budget",
+      "Directed a 70+ person engineering organization (SRE, QA, Automation, Monitoring) and a $10M+ infrastructure budget for a national digital-payments platform",
       "Implemented comprehensive CI/CD pipelines using GitLab CI, Helm Charts, and Kubernetes on AWS EKS, serving 50M+ users",
       "Improved system stability and reduced downtime by 35% through proactive monitoring and automated incident response",
       "Completed full digital payment platform migration and CI/CD implementation in 18 months, supporting 300% user growth"
@@ -111,9 +116,9 @@ const Experience: React.FC = () => {
           {experienceData.map((experience, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
               className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="grid lg:grid-cols-3 gap-8">
@@ -128,6 +133,12 @@ const Experience: React.FC = () => {
                       <div className="text-blue-400 font-semibold">
                         {experience.company}
                       </div>
+                      {experience.period && (
+                        <div className="flex items-center text-gray-400 text-sm mt-1">
+                          <Calendar size={14} className="mr-1" />
+                          {experience.period}
+                        </div>
+                      )}
                     </div>
                   </div>
                   
@@ -186,17 +197,17 @@ const Experience: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Drive Your Next Digital Transformation?
+              Selectively exploring executive technology leadership mandates
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              With proven expertise in leading large-scale transformations and managing multi-million dollar budgets, 
-              I'm ready to help your organization achieve its technology goals.
+              Open to senior leadership roles and board-level advisory where security, cloud, and platform
+              engineering are central to the business strategy.
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              Let's Connect
+              Start a Conversation
             </button>
           </div>
         </motion.div>

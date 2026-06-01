@@ -134,6 +134,12 @@ const Skills: React.FC = () => {
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
 
+  const getTier = (level: number) => {
+    if (level >= 90) return { label: 'Expert', fraction: 100 };
+    if (level >= 80) return { label: 'Advanced', fraction: 66 };
+    return { label: 'Proficient', fraction: 33 };
+  };
+
   const activeSkillCategory = skillCategories.find(cat => cat.id === activeCategory) || skillCategories[0];
   const colorClasses = getColorClasses(activeSkillCategory.color);
 
@@ -241,18 +247,18 @@ const Skills: React.FC = () => {
                           {skill.description}
                         </p>
                       </div>
-                      <div className={`text-xl font-bold ${colorClasses.text}`}>
-                        {skill.level}%
+                      <div className={`text-sm font-semibold px-3 py-1 rounded-full border ${colorClasses.bg} ${colorClasses.border} ${colorClasses.text}`}>
+                        {getTier(skill.level).label}
                       </div>
                     </div>
-                    
-                    {/* Progress Bar */}
-                    <div className="w-full bg-slate-700 rounded-full h-2">
+
+                    {/* Proficiency Indicator */}
+                    <div className="w-full bg-slate-700 rounded-full h-1.5">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
+                        animate={{ width: `${getTier(skill.level).fraction}%` }}
                         transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                        className={`h-2 rounded-full ${colorClasses.progress}`}
+                        className={`h-1.5 rounded-full ${colorClasses.progress}`}
                       />
                     </div>
                   </motion.div>
