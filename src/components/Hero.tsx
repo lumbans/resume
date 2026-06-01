@@ -13,10 +13,9 @@ const Hero: React.FC = () => {
       id="hero" 
       className="relative min-h-screen flex items-center justify-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/resume/images/hero-background.jpg')`,
+        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.92), rgba(255, 255, 255, 0.95)), url('/resume/images/hero-background.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center'
       }}
     >
       <div className="container mx-auto px-6 py-20">
@@ -26,7 +25,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-white"
+            className="text-slate-900"
           >
             {/* Executive Title */}
             <motion.div
@@ -36,11 +35,11 @@ const Hero: React.FC = () => {
               className="mb-6"
             >
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Lumban</span>
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Lumban</span>
                 <br />
-                <span className="text-white">Sopian</span>
+                <span className="text-slate-900">Sopian</span>
               </h1>
-              <div className="text-xl lg:text-2xl text-gray-300 font-light">
+              <div className="text-xl lg:text-2xl text-slate-600 font-light">
                 Strategic IT Executive | Division Head | DevOps & Cloud Architecture Leader
               </div>
             </motion.div>
@@ -52,20 +51,20 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mb-8"
             >
-              <p className="text-lg text-gray-200 leading-relaxed mb-6">
-                Technology &amp; security executive with <span className="text-blue-400 font-semibold">18+ years</span> building
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                Technology &amp; security executive with <span className="text-blue-600 font-semibold">18+ years</span> building
                 and securing mission-critical platforms in regulated banking and fintech. I lead at the intersection of
                 cybersecurity, cloud, and platform engineering &mdash; translating regulatory and resilience mandates into
                 measurable business outcomes.
               </p>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Currently serving as <span className="text-blue-400 font-semibold">Division Head</span> at
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Currently serving as <span className="text-blue-600 font-semibold">Division Head</span> at
                 PT Bank Multiarta Sentosa Tbk, responsible for enterprise security strategy, technology governance,
                 regulatory compliance, and digital transformation programs.
               </p>
-              <p className="text-gray-300 leading-relaxed">
-                Proven track record leading engineering organizations of up to <span className="text-blue-400 font-semibold">70+ professionals</span> and
-                managing technology budgets of up to <span className="text-blue-400 font-semibold">USD 10M+</span>, while
+              <p className="text-slate-600 leading-relaxed">
+                Proven track record leading engineering organizations of up to <span className="text-blue-600 font-semibold">70+ professionals</span> and
+                managing technology budgets of up to <span className="text-blue-600 font-semibold">USD 10M+</span>, while
                 delivering 40% reduction in security incidents, 30% cloud cost optimization, 50% MTTR improvement, and
                 sustained 99.95%+ service availability.
               </p>
@@ -79,28 +78,28 @@ const Hero: React.FC = () => {
               className="grid grid-cols-2 gap-6 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
                   <CountUp to={18} suffix="+" />
                 </div>
-                <div className="text-sm text-gray-300">Years Experience</div>
+                <div className="text-sm text-slate-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
                   <CountUp to={70} suffix="+" />
                 </div>
-                <div className="text-sm text-gray-300">Team Members Led</div>
+                <div className="text-sm text-slate-600">Team Members Led</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
                   <CountUp to={10} prefix="$" suffix="M+" />
                 </div>
-                <div className="text-sm text-gray-300">Budget Managed</div>
+                <div className="text-sm text-slate-600">Budget Managed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
                   <CountUp to={50} suffix="M+" />
                 </div>
-                <div className="text-sm text-gray-300">Users Served</div>
+                <div className="text-sm text-slate-600">Users Served</div>
               </div>
             </motion.div>
 
@@ -119,14 +118,14 @@ const Hero: React.FC = () => {
               </button>
               <button
                 onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-semibold rounded-lg transition-all duration-300"
+                className="px-8 py-3 border-2 border-blue-400 text-blue-600 hover:bg-blue-400 hover:text-white font-semibold rounded-lg transition-all duration-300"
               >
                 View Experience
               </button>
               <a
                 href="/resume/Lumban-Sopian-CV.pdf"
                 download
-                className="px-8 py-3 border-2 border-slate-400 text-slate-200 hover:bg-slate-200 hover:text-slate-900 font-semibold rounded-lg transition-all duration-300 text-center"
+                className="px-8 py-3 border-2 border-slate-300 text-slate-700 hover:bg-slate-100 hover:text-slate-900 font-semibold rounded-lg transition-all duration-300 text-center"
               >
                 Download CV
               </a>
@@ -152,7 +151,7 @@ const Hero: React.FC = () => {
                   height={384}
                   decoding="async"
                   fetchPriority="high"
-                  className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
+                  className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl shadow-slate-300/60"
                 />
               </picture>
             </div>
@@ -162,13 +161,13 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="absolute -top-4 -left-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
+              className="absolute -top-4 -left-4 bg-white/80 backdrop-blur-md rounded-lg p-4 border border-slate-200 shadow-lg shadow-slate-300/40"
             >
               <div className="flex items-center space-x-3">
-                <Shield className="text-violet-400" size={24} />
+                <Shield className="text-violet-600" size={24} />
                 <div>
-                  <div className="text-white font-semibold">99.95%</div>
-                  <div className="text-gray-300 text-sm">Service Availability</div>
+                  <div className="text-slate-900 font-semibold">99.95%</div>
+                  <div className="text-slate-600 text-sm">Service Availability</div>
                 </div>
               </div>
             </motion.div>
@@ -177,13 +176,13 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
-              className="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
+              className="absolute -bottom-4 -right-4 bg-white/80 backdrop-blur-md rounded-lg p-4 border border-slate-200 shadow-lg shadow-slate-300/40"
             >
               <div className="flex items-center space-x-3">
-                <Cloud className="text-cyan-400" size={24} />
+                <Cloud className="text-cyan-600" size={24} />
                 <div>
-                  <div className="text-white font-semibold">30%</div>
-                  <div className="text-gray-300 text-sm">Cloud Cost Saved</div>
+                  <div className="text-slate-900 font-semibold">30%</div>
+                  <div className="text-slate-600 text-sm">Cloud Cost Saved</div>
                 </div>
               </div>
             </motion.div>
@@ -192,13 +191,13 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.6 }}
-              className="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
+              className="absolute top-1/2 -right-8 bg-white/80 backdrop-blur-md rounded-lg p-4 border border-slate-200 shadow-lg shadow-slate-300/40"
             >
               <div className="flex items-center space-x-3">
-                <Users className="text-indigo-400" size={24} />
+                <Users className="text-indigo-600" size={24} />
                 <div>
-                  <div className="text-white font-semibold">70+</div>
-                  <div className="text-gray-300 text-sm">Engineers Led</div>
+                  <div className="text-slate-900 font-semibold">70+</div>
+                  <div className="text-slate-600 text-sm">Engineers Led</div>
                 </div>
               </div>
             </motion.div>
@@ -214,7 +213,7 @@ const Hero: React.FC = () => {
         >
           <button
             onClick={scrollToNext}
-            className="text-white hover:text-blue-400 transition-colors duration-300"
+            className="text-slate-900 hover:text-blue-600 transition-colors duration-300"
           >
             <div className="flex flex-col items-center space-y-2">
               <span className="text-sm">Scroll to explore</span>

@@ -50,7 +50,7 @@ const Testimonials: React.FC = () => {
   const hasTestimonials = testimonials.length > 0;
 
   return (
-    <section id="recommendations" className="py-20 bg-slate-900/50">
+    <section id="recommendations" className="py-20 bg-white/50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -59,10 +59,10 @@ const Testimonials: React.FC = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Recommendations</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Recommendations</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Endorsements from leaders, peers, and teams across banking, fintech, and
             technology.
           </p>
@@ -76,15 +76,15 @@ const Testimonials: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
-                className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
+                className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
               >
-                <Quote className="text-blue-400 mb-4" size={28} />
-                <p className="text-gray-200 leading-relaxed mb-6 flex-grow">
+                <Quote className="text-blue-600 mb-4" size={28} />
+                <p className="text-slate-700 leading-relaxed mb-6 flex-grow">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <div className="text-white font-semibold">{t.name}</div>
-                  <div className="text-blue-400 text-sm">{t.title}</div>
+                  <div className="text-slate-900 font-semibold">{t.name}</div>
+                  <div className="text-blue-600 text-sm">{t.title}</div>
                 </div>
               </motion.div>
             ))}
@@ -96,8 +96,8 @@ const Testimonials: React.FC = () => {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="max-w-2xl mx-auto text-center bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-10 border border-indigo-500/30"
           >
-            <Quote className="mx-auto text-blue-400 mb-4" size={36} />
-            <p className="text-gray-200 text-lg leading-relaxed mb-8">
+            <Quote className="mx-auto text-blue-600 mb-4" size={36} />
+            <p className="text-slate-700 text-lg leading-relaxed mb-8">
               Colleagues, executives, and engineering teams I&rsquo;ve worked with have
               shared recommendations on LinkedIn. References are available on request.
             </p>

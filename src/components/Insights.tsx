@@ -26,7 +26,7 @@ const insights: Insight[] = [
     abstract:
       'How to embed security into the delivery pipeline without slowing the business — aligning automated controls with OJK and PCI DSS obligations.',
     icon: <Shield size={22} />,
-    color: 'text-violet-400'
+    color: 'text-violet-600'
   },
   {
     category: 'Architecture',
@@ -35,7 +35,7 @@ const insights: Insight[] = [
     abstract:
       'A pragmatic path to Zero Trust in a regulated environment, and what it takes to sustain 99.95%+ availability for critical banking services.',
     icon: <Server size={22} />,
-    color: 'text-indigo-400'
+    color: 'text-indigo-600'
   },
   {
     category: 'Platform Engineering',
@@ -44,7 +44,7 @@ const insights: Insight[] = [
     abstract:
       'Building and operating a national digital-payments platform through 300% growth — resilience, observability, and the org design behind it.',
     icon: <TrendingUp size={22} />,
-    color: 'text-cyan-400'
+    color: 'text-cyan-600'
   },
   {
     category: 'Cloud & FinOps',
@@ -53,7 +53,7 @@ const insights: Insight[] = [
     abstract:
       'Why cost efficiency is an executive responsibility, not a quarterly cleanup — the operating model behind sustained 30% cloud savings.',
     icon: <Cloud size={22} />,
-    color: 'text-sky-400'
+    color: 'text-sky-600'
   }
 ];
 
@@ -67,7 +67,7 @@ const Insights: React.FC = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="insights" className="py-20 bg-slate-800/30">
+    <section id="insights" className="py-20 bg-slate-100/30">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -76,10 +76,10 @@ const Insights: React.FC = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Insights & <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Perspectives</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Insights & <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Perspectives</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Topics I speak and advise on — drawn from leading security, cloud, and
             platform engineering across regulated banking and fintech.
           </p>
@@ -92,13 +92,13 @@ const Insights: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
-              className="group bg-slate-900/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
+              className="group bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-center justify-between mb-5">
-                <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-600/30">
+                <span className="px-3 py-1 bg-blue-600/20 text-blue-600 rounded-full text-sm border border-blue-600/30">
                   {insight.category}
                 </span>
-                <span className="flex items-center space-x-1 text-gray-400 text-xs uppercase tracking-wide">
+                <span className="flex items-center space-x-1 text-slate-500 text-xs uppercase tracking-wide">
                   {formatIcon(insight.format)}
                   <span>{insight.format}</span>
                 </span>
@@ -106,18 +106,18 @@ const Insights: React.FC = () => {
 
               <div className="flex items-start space-x-4 mb-4">
                 <div className={`${insight.color} mt-1 flex-shrink-0`}>{insight.icon}</div>
-                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                   {insight.title}
                 </h3>
               </div>
 
-              <p className="text-gray-300 leading-relaxed mb-6 flex-grow">
+              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {insight.abstract}
               </p>
 
               <button
                 onClick={scrollToContact}
-                className="inline-flex items-center space-x-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors self-start"
+                className="inline-flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-300 transition-colors self-start"
               >
                 <span>Discuss this topic</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

@@ -25,15 +25,15 @@ const Header: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
           : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo/Name */}
-          <div className="text-2xl font-bold text-white">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Lumban</span> Sopian
+          <div className="text-2xl font-bold text-slate-900">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Lumban</span> Sopian
           </div>
 
           {/* Desktop Navigation */}
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+                className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.label}
               </button>
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <a 
               href="mailto:lumban.sopian@msn.com"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="text-slate-600 hover:text-blue-600 transition-colors"
             >
               <Mail size={20} />
             </a>
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
               href="https://www.linkedin.com/in/lumbans"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="text-slate-600 hover:text-blue-600 transition-colors"
             >
               <Linkedin size={20} />
             </a>
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
               href="https://github.com/lumbans"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="text-slate-600 hover:text-blue-600 transition-colors"
             >
               <Github size={20} />
             </a>
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-slate-900"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 py-4 border-t border-gray-700">
+          <nav className="md:hidden mt-4 py-4 border-t border-slate-200">
             <div className="flex flex-col space-y-4">
               {[
                 { label: 'About', id: 'hero' },
@@ -107,17 +107,17 @@ const Header: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+                  className="text-left text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium"
                 >
                   {item.label}
                 </button>
               ))}
               
               {/* Mobile Contact Links */}
-              <div className="flex space-x-4 pt-4 border-t border-gray-700">
+              <div className="flex space-x-4 pt-4 border-t border-slate-200">
                 <a 
                   href="mailto:lumban.sopian@msn.com"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
                   <Mail size={20} />
                 </a>
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
                   href="https://www.linkedin.com/in/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
                   <Linkedin size={20} />
                 </a>
@@ -133,13 +133,13 @@ const Header: React.FC = () => {
                   href="https://github.com/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
                   <Github size={20} />
                 </a>
                 <a
                   href="tel:+6282122428287"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  className="text-slate-600 hover:text-blue-600 transition-colors"
                 >
                   <Phone size={20} />
                 </a>

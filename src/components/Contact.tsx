@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 relative overflow-hidden bg-slate-950"
+      className="py-20 relative overflow-hidden bg-slate-100"
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -95,10 +95,10 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Let's <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Connect</span>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            Let's <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-slate-500 max-w-2xl mx-auto">
             Open to strategic conversations around cloud, DevSecOps,
             digital transformation, and technology leadership.
           </p>
@@ -111,15 +111,15 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
-              <h3 className="text-xl font-semibold text-white mb-6">
+            <div className="bg-white rounded-2xl p-8 border border-slate-200">
+              <h3 className="text-xl font-semibold text-slate-900 mb-6">
                 Send a Message
               </h3>
 
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-600/20 border border-green-500/30 rounded-lg flex items-center space-x-3">
-                  <CheckCircle className="text-green-400" size={20} />
-                  <span className="text-green-400">
+                  <CheckCircle className="text-green-600" size={20} />
+                  <span className="text-green-600">
                     Message sent successfully.
                   </span>
                 </div>
@@ -127,8 +127,8 @@ const Contact: React.FC = () => {
 
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-600/20 border border-red-500/30 rounded-lg flex items-center space-x-3">
-                  <AlertCircle className="text-red-400" size={20} />
-                  <span className="text-red-400">
+                  <AlertCircle className="text-red-600" size={20} />
+                  <span className="text-red-600">
                     Something went wrong. Please try again.
                   </span>
                 </div>
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
                 />
 
                 <input
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
                 />
 
                 <input
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="Subject"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
                 />
 
                 <textarea
@@ -186,7 +186,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Your Message"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none"
+                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500 resize-none"
                 />
 
                 <button
@@ -214,49 +214,49 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800">
-              <h3 className="text-xl font-semibold text-white mb-6">
+            <div className="bg-white rounded-2xl p-8 border border-slate-200">
+              <h3 className="text-xl font-semibold text-slate-900 mb-6">
                 Contact Information
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <Mail className="text-blue-400" size={22} />
+                  <Mail className="text-blue-600" size={22} />
                   <a
                     href="mailto:lumban.sopian@msn.com"
-                    className="text-blue-400 hover:underline"
+                    className="text-blue-600 hover:underline"
                   >
                     lumban.sopian@msn.com
                   </a>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <Linkedin className="text-blue-400" size={22} />
+                  <Linkedin className="text-blue-600" size={22} />
                   <a
                     href="https://www.linkedin.com/in/lumbans"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
+                    className="text-blue-600 hover:underline"
                   >
                     linkedin.com/in/lumbans
                   </a>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <Github className="text-gray-300" size={22} />
+                  <Github className="text-slate-600" size={22} />
                   <a
                     href="https://github.com/lumbans"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
+                    className="text-blue-600 hover:underline"
                   >
                     github.com/lumbans
                   </a>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <MapPin className="text-blue-400" size={22} />
-                  <span className="text-gray-400">
+                  <MapPin className="text-blue-600" size={22} />
+                  <span className="text-slate-500">
                     Tangerang, Indonesia
                   </span>
                 </div>
@@ -265,12 +265,12 @@ const Contact: React.FC = () => {
 
             <div className="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6">
               <div className="flex items-center space-x-3 mb-3">
-                <Clock className="text-blue-400" size={20} />
-                <span className="text-white font-medium">
+                <Clock className="text-blue-600" size={20} />
+                <span className="text-slate-900 font-medium">
                   Response Time
                 </span>
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-slate-500 text-sm">
                 Typical response within 24–48 hours.
               </p>
             </div>

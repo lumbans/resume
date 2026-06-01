@@ -30,9 +30,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["DevSecOps", "Zero Trust Architecture", "AWS Transit Gateway", "PCI DSS", "Enterprise Security"],
     metrics: [
-      { icon: <DollarSign className="text-blue-400" size={20} />, value: "$5M+", label: "Annual Security Budget" },
-      { icon: <TrendingUp className="text-green-400" size={20} />, value: "40%", label: "Security Incidents Reduction" },
-      { icon: <Shield className="text-green-400" size={20} />, value: "99.95%", label: "System Availability" }
+      { icon: <DollarSign className="text-blue-600" size={20} />, value: "$5M+", label: "Annual Security Budget" },
+      { icon: <TrendingUp className="text-green-600" size={20} />, value: "40%", label: "Security Incidents Reduction" },
+      { icon: <Shield className="text-green-600" size={20} />, value: "99.95%", label: "System Availability" }
     ]
   },
   {
@@ -47,9 +47,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["AWS CDK", "C#", "Infrastructure as Code", "DevSecOps", "SOC 2 Compliance"],
     metrics: [
-      { icon: <Users className="text-blue-400" size={20} />, value: "1M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-green-400" size={20} />, value: "30%", label: "Cost Reduction" },
-      { icon: <DollarSign className="text-blue-400" size={20} />, value: "4h→30m", label: "Provisioning Time" }
+      { icon: <Users className="text-blue-600" size={20} />, value: "1M+", label: "Daily Active Users" },
+      { icon: <TrendingUp className="text-green-600" size={20} />, value: "30%", label: "Cost Reduction" },
+      { icon: <DollarSign className="text-blue-600" size={20} />, value: "4h→30m", label: "Provisioning Time" }
     ]
   },
   {
@@ -63,9 +63,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["InfoSec", "Trend Micro DLP & Endpoint Protection", "VMware", "SolarWinds", "GCP", "GKE", "Cloudflare"],
     metrics: [
-      { icon: <Users className="text-blue-400" size={20} />, value: "2M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-green-400" size={20} />, value: "30%", label: "Incident Reduction" },
-      { icon: <DollarSign className="text-blue-400" size={20} />, value: "<1h", label: "Recovery Time" }
+      { icon: <Users className="text-blue-600" size={20} />, value: "2M+", label: "Daily Active Users" },
+      { icon: <TrendingUp className="text-green-600" size={20} />, value: "30%", label: "Incident Reduction" },
+      { icon: <DollarSign className="text-blue-600" size={20} />, value: "<1h", label: "Recovery Time" }
     ]
   },
   {
@@ -80,9 +80,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["GitLab CI", "Kubernetes", "AWS EKS", "Helm Charts", "SRE", "Automation Engineering"],
     metrics: [
-      { icon: <Users className="text-blue-400" size={20} />, value: "70+", label: "Team Members" },
-      { icon: <DollarSign className="text-blue-400" size={20} />, value: "$10M+", label: "Annual Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "50M+", label: "Users Served" }
+      { icon: <Users className="text-blue-600" size={20} />, value: "70+", label: "Team Members" },
+      { icon: <DollarSign className="text-blue-600" size={20} />, value: "$10M+", label: "Annual Budget" },
+      { icon: <TrendingUp className="text-blue-600" size={20} />, value: "50M+", label: "Users Served" }
     ]
   }
 ];
@@ -94,7 +94,7 @@ const Experience: React.FC = () => {
   });
 
   return (
-    <section id="experience" className="py-20 bg-slate-800/50">
+    <section id="experience" className="py-20 bg-slate-100/50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -103,10 +103,10 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Professional <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Experience</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Professional <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Experience</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             18+ years of strategic leadership in IT, driving digital transformation
             and innovation across financial institutions and technology companies
           </p>
@@ -119,22 +119,22 @@ const Experience: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
-              className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-8 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300"
+              className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Left Column - Role Info */}
                 <div className="lg:col-span-1">
                   <div className="flex items-center space-x-3 mb-4">
-                    <Building className="text-blue-400" size={24} />
+                    <Building className="text-blue-600" size={24} />
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-1">
+                      <h3 className="text-xl font-bold text-slate-900 mb-1">
                         {experience.title}
                       </h3>
-                      <div className="text-blue-400 font-semibold">
+                      <div className="text-blue-600 font-semibold">
                         {experience.company}
                       </div>
                       {experience.period && (
-                        <div className="flex items-center text-gray-400 text-sm mt-1">
+                        <div className="flex items-center text-slate-500 text-sm mt-1">
                           <Calendar size={14} className="mr-1" />
                           {experience.period}
                         </div>
@@ -148,8 +148,8 @@ const Experience: React.FC = () => {
                       <div key={metricIndex} className="flex items-center space-x-3">
                         {metric.icon}
                         <div>
-                          <div className="text-white font-semibold">{metric.value}</div>
-                          <div className="text-gray-400 text-sm">{metric.label}</div>
+                          <div className="text-slate-900 font-semibold">{metric.value}</div>
+                          <div className="text-slate-500 text-sm">{metric.label}</div>
                         </div>
                       </div>
                     ))}
@@ -158,24 +158,24 @@ const Experience: React.FC = () => {
 
                 {/* Middle Column - Achievements */}
                 <div className="lg:col-span-2">
-                  <h4 className="text-lg font-semibold text-white mb-4">Key Achievements</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 mb-4">Key Achievements</h4>
                   <ul className="space-y-3 mb-6">
                     {experience.achievements.map((achievement, achievementIndex) => (
                       <li key={achievementIndex} className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 leading-relaxed">{achievement}</span>
+                        <span className="text-slate-600 leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Technologies */}
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-3">Technologies & Skills</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Technologies & Skills</h4>
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-600/30"
+                          className="px-3 py-1 bg-blue-600/20 text-blue-600 rounded-full text-sm border border-blue-600/30"
                         >
                           {tech}
                         </span>
@@ -196,10 +196,10 @@ const Experience: React.FC = () => {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Selectively exploring executive technology leadership mandates
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
               Open to senior leadership roles and board-level advisory where security, cloud, and platform
               engineering are central to the business strategy.
             </p>

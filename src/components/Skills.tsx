@@ -124,12 +124,12 @@ const Skills: React.FC = () => {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: { bg: 'bg-blue-600/20', border: 'border-blue-500/30', text: 'text-blue-400', progress: 'bg-blue-500' },
-      indigo: { bg: 'bg-indigo-600/20', border: 'border-indigo-500/30', text: 'text-indigo-400', progress: 'bg-indigo-500' },
-      violet: { bg: 'bg-violet-600/20', border: 'border-violet-500/30', text: 'text-violet-400', progress: 'bg-violet-500' },
-      cyan: { bg: 'bg-cyan-600/20', border: 'border-cyan-500/30', text: 'text-cyan-400', progress: 'bg-cyan-500' },
+      blue: { bg: 'bg-blue-600/20', border: 'border-blue-500/30', text: 'text-blue-600', progress: 'bg-blue-500' },
+      indigo: { bg: 'bg-indigo-600/20', border: 'border-indigo-500/30', text: 'text-indigo-600', progress: 'bg-indigo-500' },
+      violet: { bg: 'bg-violet-600/20', border: 'border-violet-500/30', text: 'text-violet-600', progress: 'bg-violet-500' },
+      cyan: { bg: 'bg-cyan-600/20', border: 'border-cyan-500/30', text: 'text-cyan-600', progress: 'bg-cyan-500' },
       teal: { bg: 'bg-teal-600/20', border: 'border-teal-500/30', text: 'text-teal-400', progress: 'bg-teal-500' },
-      sky: { bg: 'bg-sky-600/20', border: 'border-sky-500/30', text: 'text-sky-400', progress: 'bg-sky-500' }
+      sky: { bg: 'bg-sky-600/20', border: 'border-sky-500/30', text: 'text-sky-600', progress: 'bg-sky-500' }
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -144,7 +144,7 @@ const Skills: React.FC = () => {
   const colorClasses = getColorClasses(activeSkillCategory.color);
 
   return (
-    <section id="skills" className="py-20 bg-slate-900/50">
+    <section id="skills" className="py-20 bg-white/50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -153,10 +153,10 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Technical <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Expertise</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Technical <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Expertise</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive technical skills across cloud platforms, security, DevOps, 
             and leadership gained through 18+ years of hands-on experience
           </p>
@@ -185,18 +185,18 @@ const Skills: React.FC = () => {
                     className={`w-full p-4 rounded-xl border transition-all duration-300 text-left ${
                       isActive 
                         ? `${colors.bg} ${colors.border} shadow-lg` 
-                        : 'bg-slate-800/50 border-slate-700/50 hover:border-slate-600/50'
+                        : 'bg-slate-100/50 border-slate-200/50 hover:border-slate-300/50'
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={isActive ? colors.text : 'text-gray-400'}>
+                      <div className={isActive ? colors.text : 'text-slate-500'}>
                         {category.icon}
                       </div>
                       <div>
-                        <div className={`font-semibold ${isActive ? 'text-white' : 'text-gray-300'}`}>
+                        <div className={`font-semibold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}>
                           {category.title}
                         </div>
-                        <div className="text-sm text-gray-400 mt-1">
+                        <div className="text-sm text-slate-500 mt-1">
                           {category.skills.length} skills
                         </div>
                       </div>
@@ -220,10 +220,10 @@ const Skills: React.FC = () => {
                   {activeSkillCategory.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-slate-900">
                     {activeSkillCategory.title}
                   </h3>
-                  <p className="text-gray-300">
+                  <p className="text-slate-600">
                     {activeSkillCategory.description}
                   </p>
                 </div>
@@ -236,14 +236,14 @@ const Skills: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-slate-800/50 rounded-lg p-6 border border-slate-700/50"
+                    className="bg-slate-100/50 rounded-lg p-6 border border-slate-200/50"
                   >
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h4 className="text-lg font-semibold text-white mb-1">
+                        <h4 className="text-lg font-semibold text-slate-900 mb-1">
                           {skill.name}
                         </h4>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-slate-500 text-sm">
                           {skill.description}
                         </p>
                       </div>
@@ -253,7 +253,7 @@ const Skills: React.FC = () => {
                     </div>
 
                     {/* Proficiency Indicator */}
-                    <div className="w-full bg-slate-700 rounded-full h-1.5">
+                    <div className="w-full bg-slate-200 rounded-full h-1.5">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${getTier(skill.level).fraction}%` }}
@@ -275,25 +275,25 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
-          <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Award className="mx-auto text-blue-400 mb-3" size={32} />
-            <div className="text-2xl font-bold text-white mb-1">6</div>
-            <div className="text-gray-400">Skill Categories</div>
+          <div className="text-center bg-slate-100/50 rounded-xl p-6 border border-slate-200/50">
+            <Award className="mx-auto text-blue-600 mb-3" size={32} />
+            <div className="text-2xl font-bold text-slate-900 mb-1">6</div>
+            <div className="text-slate-500">Skill Categories</div>
           </div>
-          <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Target className="mx-auto text-cyan-400 mb-3" size={32} />
-            <div className="text-2xl font-bold text-white mb-1">25+</div>
-            <div className="text-gray-400">Core Technologies</div>
+          <div className="text-center bg-slate-100/50 rounded-xl p-6 border border-slate-200/50">
+            <Target className="mx-auto text-cyan-600 mb-3" size={32} />
+            <div className="text-2xl font-bold text-slate-900 mb-1">25+</div>
+            <div className="text-slate-500">Core Technologies</div>
           </div>
-          <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Zap className="mx-auto text-violet-400 mb-3" size={32} />
-            <div className="text-2xl font-bold text-white mb-1">18+</div>
-            <div className="text-gray-400">Years Experience</div>
+          <div className="text-center bg-slate-100/50 rounded-xl p-6 border border-slate-200/50">
+            <Zap className="mx-auto text-violet-600 mb-3" size={32} />
+            <div className="text-2xl font-bold text-slate-900 mb-1">18+</div>
+            <div className="text-slate-500">Years Experience</div>
           </div>
-          <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Network className="mx-auto text-indigo-400 mb-3" size={32} />
-            <div className="text-2xl font-bold text-white mb-1">10+</div>
-            <div className="text-gray-400">Certifications</div>
+          <div className="text-center bg-slate-100/50 rounded-xl p-6 border border-slate-200/50">
+            <Network className="mx-auto text-indigo-600 mb-3" size={32} />
+            <div className="text-2xl font-bold text-slate-900 mb-1">10+</div>
+            <div className="text-slate-500">Certifications</div>
           </div>
         </motion.div>
       </div>
