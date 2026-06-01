@@ -9,15 +9,36 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section 
-      id="hero" 
-      className="relative min-h-screen flex items-center justify-center"
-      style={{
-        backgroundColor: '#f8fafc',
-        backgroundImage: `radial-gradient(at 18% 22%, rgba(59, 130, 246, 0.12) 0px, transparent 50%), radial-gradient(at 82% 28%, rgba(139, 92, 246, 0.12) 0px, transparent 50%), radial-gradient(at 50% 88%, rgba(99, 102, 241, 0.10) 0px, transparent 55%)`
-      }}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: '#f8fafc' }}
     >
-      <div className="container mx-auto px-6 py-20">
+      {/* Background photo layer (brightened) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url('/resume/images/hero-background.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(1.18) saturate(1.05)'
+        }}
+      />
+      {/* Light wash for text legibility (stronger on the left, behind the copy) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/60 to-white/35"
+      />
+      {/* Subtle jewel tint */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `radial-gradient(at 18% 22%, rgba(59, 130, 246, 0.10) 0px, transparent 50%), radial-gradient(at 82% 28%, rgba(139, 92, 246, 0.10) 0px, transparent 50%)`
+        }}
+      />
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <motion.div
