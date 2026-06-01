@@ -13,9 +13,8 @@ const Hero: React.FC = () => {
       id="hero" 
       className="relative min-h-screen flex items-center justify-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.92), rgba(255, 255, 255, 0.95)), url('/resume/images/hero-background.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundColor: '#f8fafc',
+        backgroundImage: `radial-gradient(at 18% 22%, rgba(59, 130, 246, 0.12) 0px, transparent 50%), radial-gradient(at 82% 28%, rgba(139, 92, 246, 0.12) 0px, transparent 50%), radial-gradient(at 50% 88%, rgba(99, 102, 241, 0.10) 0px, transparent 55%)`
       }}
     >
       <div className="container mx-auto px-6 py-20">
