@@ -22,7 +22,28 @@ interface Testimonial {
  *     source: 'https://www.linkedin.com/in/lumbans'
  *   }
  */
-const testimonials: Testimonial[] = [];
+const testimonials: Testimonial[] = [
+  {
+    quote: `Lumban's tagline describes him as "Just an ordinary person", but he certainly anything but. Lumban is smart, driven and tenacious. I would often get an email or IM from him at odd hours, telling me that he'd finally worked out how to fix an issue or roll out a new system. He's been instrumental in helping us move and manage our services in AWS. I'm sorry to see him go, but wish him all the best for the future. I hope one day we'll work together again.`,
+    name: 'Aaron Chipper',
+    title: 'CTO & Co-Founder at FrankieOne'
+  },
+  {
+    quote: `Lumban has great grasp of Unix (namely Linux) systems and networks, and helped Multiply with the full automation of its server configuration and application deployments. Additionally, he worked (to great effect!) with the devs and other system administrators to keep the Multiply up and operational, even while under extreme loads.`,
+    name: 'Kenneth Shaw',
+    title: 'Former CTO, Brankas & Multiply.com'
+  },
+  {
+    quote: `Lumban is a very high skilled DevOps engineer. We worked together in Smartfren to setup Continuous Delivery process in the company. He like to share his knowledge to others. I have learn so much from him.`,
+    name: 'Chrystiadi Harris',
+    title: 'AVP of Engineering at Tokopedia'
+  },
+  {
+    quote: `I couldn't be more excited to recommend my friend, Lumban Sopian, for his incredible skills as a DevOps engineer. If you're looking for someone who truly knows the ins and outs of AWS, Lumban is your go-to person. While we worked together, Lumban consistently impressed me with his ability to streamline processes, troubleshoot issues, and find out-of-the-box solutions to any challenge. He's a natural problem solver with a positive attitude that's absolutely contagious.`,
+    name: 'Ferbianto',
+    title: 'AI Native Engineer | Full-stack Software Engineer'
+  }
+];
 
 const Testimonials: React.FC = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
