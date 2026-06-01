@@ -44,6 +44,7 @@ const Header: React.FC = () => {
               { label: 'Skills', id: 'skills' },
               { label: 'Achievements', id: 'achievements' },
               { label: 'Certifications', id: 'certifications' },
+              { label: 'Insights', id: 'insights' },
               { label: 'Contact', id: 'contact' }
             ].map((item) => (
               <button
