@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className="text-2xl font-bold text-white mb-4">
-                  <span className="text-blue-400">Lumban</span> Sopian
+                  <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Lumban</span> Sopian
                 </div>
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   Strategic IT Executive specializing in cybersecurity, cloud architecture, 
@@ -160,11 +160,11 @@ const Footer: React.FC = () => {
                     <div className="text-gray-400 text-sm">Years Experience</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">70+</div>
+                    <div className="text-2xl font-bold text-indigo-400 mb-1">70+</div>
                     <div className="text-gray-400 text-sm">Team Members Led</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">$10M+</div>
+                    <div className="text-2xl font-bold text-violet-400 mb-1">$10M+</div>
                     <div className="text-gray-400 text-sm">Budget Managed</div>
                   </div>
                 </div>

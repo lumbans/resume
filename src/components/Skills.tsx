@@ -35,7 +35,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Cloud Platforms',
     icon: <Cloud size={24} />,
     description: 'Multi-cloud architecture and platform expertise',
-    color: 'blue',
+    color: 'cyan',
     skills: [
       { name: 'AWS (EC2, S3, EKS, Lambda, CloudFormation)', level: 95, description: 'Advanced cloud architecture and service management' },
       { name: 'Google Cloud Platform (GCP)', level: 85, description: 'Multi-cloud implementation and migration' },
@@ -62,7 +62,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Security Leadership',
     icon: <Shield size={24} />,
     description: 'Enterprise security architecture and risk management',
-    color: 'blue',
+    color: 'violet',
     skills: [
       { name: 'DevSecOps Implementation', level: 94, description: 'Security integrated development practices' },
       { name: 'Zero Trust Architecture', level: 90, description: 'Modern security framework implementation' },
@@ -76,7 +76,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Leadership & Strategy',
     icon: <Users size={24} />,
     description: 'Team leadership, strategic planning, and business alignment',
-    color: 'blue',
+    color: 'indigo',
     skills: [
       { name: 'Digital Transformation', level: 95, description: 'Leading organizational technology transformation' },
       { name: 'Team Leadership (70+ members)', level: 92, description: 'Cross-functional team management' },
@@ -90,7 +90,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Monitoring & Observability',
     icon: <Monitor size={24} />,
     description: 'System monitoring, analytics, and performance optimization',
-    color: 'blue',
+    color: 'teal',
     skills: [
       { name: 'Prometheus/Grafana', level: 88, description: 'Infrastructure and application monitoring' },
       { name: 'ELK Stack', level: 85, description: 'Log aggregation and analysis' },
@@ -104,7 +104,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Programming & Scripting',
     icon: <Code size={24} />,
     description: 'Development and automation scripting capabilities',
-    color: 'blue',
+    color: 'sky',
     skills: [
       { name: 'Python', level: 85, description: 'Automation and data processing scripts' },
       { name: 'Bash/Shell', level: 90, description: 'System administration and automation' },
@@ -125,11 +125,11 @@ const Skills: React.FC = () => {
   const getColorClasses = (color: string) => {
     const colorMap = {
       blue: { bg: 'bg-blue-600/20', border: 'border-blue-500/30', text: 'text-blue-400', progress: 'bg-blue-500' },
-      green: { bg: 'bg-green-600/20', border: 'border-green-500/30', text: 'text-green-400', progress: 'bg-green-500' },
-      red: { bg: 'bg-red-600/20', border: 'border-red-500/30', text: 'text-red-400', progress: 'bg-red-500' },
-      purple: { bg: 'bg-purple-600/20', border: 'border-purple-500/30', text: 'text-purple-400', progress: 'bg-purple-500' },
-      orange: { bg: 'bg-orange-600/20', border: 'border-orange-500/30', text: 'text-orange-400', progress: 'bg-orange-500' },
-      teal: { bg: 'bg-teal-600/20', border: 'border-teal-500/30', text: 'text-teal-400', progress: 'bg-teal-500' }
+      indigo: { bg: 'bg-indigo-600/20', border: 'border-indigo-500/30', text: 'text-indigo-400', progress: 'bg-indigo-500' },
+      violet: { bg: 'bg-violet-600/20', border: 'border-violet-500/30', text: 'text-violet-400', progress: 'bg-violet-500' },
+      cyan: { bg: 'bg-cyan-600/20', border: 'border-cyan-500/30', text: 'text-cyan-400', progress: 'bg-cyan-500' },
+      teal: { bg: 'bg-teal-600/20', border: 'border-teal-500/30', text: 'text-teal-400', progress: 'bg-teal-500' },
+      sky: { bg: 'bg-sky-600/20', border: 'border-sky-500/30', text: 'text-sky-400', progress: 'bg-sky-500' }
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -154,7 +154,7 @@ const Skills: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Technical <span className="text-blue-400">Expertise</span>
+            Technical <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Expertise</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Comprehensive technical skills across cloud platforms, security, DevOps, 
@@ -281,17 +281,17 @@ const Skills: React.FC = () => {
             <div className="text-gray-400">Skill Categories</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Target className="mx-auto text-blue-400 mb-3" size={32} />
+            <Target className="mx-auto text-cyan-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">25+</div>
             <div className="text-gray-400">Core Technologies</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Zap className="mx-auto text-blue-400 mb-3" size={32} />
+            <Zap className="mx-auto text-violet-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">18+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Network className="mx-auto text-blue-400 mb-3" size={32} />
+            <Network className="mx-auto text-indigo-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">10+</div>
             <div className="text-gray-400">Certifications</div>
           </div>

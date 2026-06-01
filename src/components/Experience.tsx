@@ -104,7 +104,7 @@ const Experience: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Professional <span className="text-blue-400">Experience</span>
+            Professional <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             18+ years of strategic leadership in IT, driving digital transformation
@@ -195,7 +195,7 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-8 border border-blue-500/30">
+          <div className="bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30">
             <h3 className="text-2xl font-bold text-white mb-4">
               Selectively exploring executive technology leadership mandates
             </h3>
@@ -205,7 +205,7 @@ const Experience: React.FC = () => {
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/30"
             >
               Start a Conversation
             </button>

@@ -135,7 +135,7 @@ const Achievements: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Key <span className="text-blue-400">Achievements</span>
+            Key <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Achievements</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Quantified business impact and technical excellence across 18+ years of
@@ -194,7 +194,7 @@ const Achievements: React.FC = () => {
               </div>
 
               {/* Business Impact */}
-              <div className="mb-6 p-4 bg-gradient-to-r from-blue-600/10 to-blue-700/10 rounded-lg border border-blue-500/20">
+              <div className="mb-6 p-4 bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-violet-600/10 rounded-lg border border-blue-500/20">
                 <div className="flex items-start space-x-3">
                   <TrendingUp className="text-blue-400 mt-1 flex-shrink-0" size={16} />
                   <div>
@@ -229,7 +229,7 @@ const Achievements: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-8 border border-blue-500/30"
+          className="mt-16 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -247,11 +247,11 @@ const Achievements: React.FC = () => {
               <div className="text-gray-300">Major Transformations</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">$17M+</div>
+              <div className="text-3xl font-bold text-indigo-400 mb-2">$17M+</div>
               <div className="text-gray-300">Budget Managed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">50M+</div>
+              <div className="text-3xl font-bold text-violet-400 mb-2">50M+</div>
               <div className="text-gray-300">Users Impacted</div>
             </div>
             <div className="text-center">

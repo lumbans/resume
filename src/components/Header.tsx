@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo/Name */}
           <div className="text-2xl font-bold text-white">
-            <span className="text-blue-400">Lumban</span> Sopian
+            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Lumban</span> Sopian
           </div>
 
           {/* Desktop Navigation */}

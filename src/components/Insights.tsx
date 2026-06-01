@@ -9,6 +9,7 @@ interface Insight {
   title: string;
   abstract: string;
   icon: React.ReactNode;
+  color: string;
 }
 
 /**
@@ -24,7 +25,8 @@ const insights: Insight[] = [
     title: 'DevSecOps in Regulated Banking',
     abstract:
       'How to embed security into the delivery pipeline without slowing the business — aligning automated controls with OJK and PCI DSS obligations.',
-    icon: <Shield size={22} />
+    icon: <Shield size={22} />,
+    color: 'text-violet-400'
   },
   {
     category: 'Architecture',
@@ -32,7 +34,8 @@ const insights: Insight[] = [
     title: 'Zero Trust for Financial Services',
     abstract:
       'A pragmatic path to Zero Trust in a regulated environment, and what it takes to sustain 99.95%+ availability for critical banking services.',
-    icon: <Server size={22} />
+    icon: <Server size={22} />,
+    color: 'text-indigo-400'
   },
   {
     category: 'Platform Engineering',
@@ -40,7 +43,8 @@ const insights: Insight[] = [
     title: 'Engineering for Scale: Lessons from 50M+ Users',
     abstract:
       'Building and operating a national digital-payments platform through 300% growth — resilience, observability, and the org design behind it.',
-    icon: <TrendingUp size={22} />
+    icon: <TrendingUp size={22} />,
+    color: 'text-cyan-400'
   },
   {
     category: 'Cloud & FinOps',
@@ -48,7 +52,8 @@ const insights: Insight[] = [
     title: 'Cloud Cost Optimization as a Leadership Discipline',
     abstract:
       'Why cost efficiency is an executive responsibility, not a quarterly cleanup — the operating model behind sustained 30% cloud savings.',
-    icon: <Cloud size={22} />
+    icon: <Cloud size={22} />,
+    color: 'text-sky-400'
   }
 ];
 
@@ -72,7 +77,7 @@ const Insights: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Insights & <span className="text-blue-400">Perspectives</span>
+            Insights & <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Perspectives</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Topics I speak and advise on — drawn from leading security, cloud, and
@@ -100,7 +105,7 @@ const Insights: React.FC = () => {
               </div>
 
               <div className="flex items-start space-x-4 mb-4">
-                <div className="text-blue-400 mt-1 flex-shrink-0">{insight.icon}</div>
+                <div className={`${insight.color} mt-1 flex-shrink-0`}>{insight.icon}</div>
                 <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                   {insight.title}
                 </h3>

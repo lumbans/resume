@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
               className="mb-6"
             >
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
-                <span className="text-blue-400">Lumban</span>
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Lumban</span>
                 <br />
                 <span className="text-white">Sopian</span>
               </h1>
@@ -79,25 +79,25 @@ const Hero: React.FC = () => {
               className="grid grid-cols-2 gap-6 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
                   <CountUp to={18} suffix="+" />
                 </div>
                 <div className="text-sm text-gray-300">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
                   <CountUp to={70} suffix="+" />
                 </div>
                 <div className="text-sm text-gray-300">Team Members Led</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
                   <CountUp to={10} prefix="$" suffix="M+" />
                 </div>
                 <div className="text-sm text-gray-300">Budget Managed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">
+                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
                   <CountUp to={50} suffix="M+" />
                 </div>
                 <div className="text-sm text-gray-300">Users Served</div>
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
             >
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/30"
               >
                 Get In Touch
               </button>
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
           >
             {/* Professional Image */}
             <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur-lg opacity-30"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-600 rounded-full blur-lg opacity-40"></div>
               <picture>
                 <source srcSet="/resume/images/professional-headshot.webp" type="image/webp" />
                 <img
@@ -165,7 +165,7 @@ const Hero: React.FC = () => {
               className="absolute -top-4 -left-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
             >
               <div className="flex items-center space-x-3">
-                <Shield className="text-blue-400" size={24} />
+                <Shield className="text-violet-400" size={24} />
                 <div>
                   <div className="text-white font-semibold">99.95%</div>
                   <div className="text-gray-300 text-sm">Service Availability</div>
@@ -180,7 +180,7 @@ const Hero: React.FC = () => {
               className="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
             >
               <div className="flex items-center space-x-3">
-                <Cloud className="text-blue-400" size={24} />
+                <Cloud className="text-cyan-400" size={24} />
                 <div>
                   <div className="text-white font-semibold">30%</div>
                   <div className="text-gray-300 text-sm">Cloud Cost Saved</div>
@@ -195,7 +195,7 @@ const Hero: React.FC = () => {
               className="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
             >
               <div className="flex items-center space-x-3">
-                <Users className="text-blue-400" size={24} />
+                <Users className="text-indigo-400" size={24} />
                 <div>
                   <div className="text-white font-semibold">70+</div>
                   <div className="text-gray-300 text-sm">Engineers Led</div>
@@ -227,7 +227,7 @@ const Hero: React.FC = () => {
       {/* Background Overlay Elements */}
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-blue-600/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-violet-500/10 rounded-full blur-xl"></div>
       </div>
     </section>
   );

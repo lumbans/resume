@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Recommendations
+            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">Recommendations</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Endorsements from leaders, peers, and teams across banking, fintech, and
@@ -94,7 +94,7 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="max-w-2xl mx-auto text-center bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-10 border border-blue-500/30"
+            className="max-w-2xl mx-auto text-center bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-10 border border-indigo-500/30"
           >
             <Quote className="mx-auto text-blue-400 mb-4" size={36} />
             <p className="text-gray-200 text-lg leading-relaxed mb-8">
@@ -105,7 +105,7 @@ const Testimonials: React.FC = () => {
               href="https://www.linkedin.com/in/lumbans"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/30"
             >
               <Linkedin size={18} />
               <span>Read recommendations on LinkedIn</span>
