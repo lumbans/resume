@@ -7,7 +7,6 @@ import {
   Github,
   MapPin,
   ArrowUp,
-  Heart,
   Code,
   Shield,
   Cloud,
@@ -159,11 +158,11 @@ const Footer: React.FC = () => {
                     <div className="text-gray-400 text-sm">Years Experience</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-green-400 mb-1">70+</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">70+</div>
                     <div className="text-gray-400 text-sm">Team Members Led</div>
                   </div>
                   <div className="text-center bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">$10M+</div>
+                    <div className="text-2xl font-bold text-blue-400 mb-1">$10M+</div>
                     <div className="text-gray-400 text-sm">Budget Managed</div>
                   </div>
                 </div>
@@ -185,13 +184,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm text-center md:text-left"
             >
-              <p className="flex items-center justify-center md:justify-start space-x-1">
-                <span>© {currentYear} Lumban Sopian. Made with</span>
-                <Heart className="text-red-400" size={14} />
-                <span>and</span>
-                <Code className="text-blue-400" size={14} />
-                <span>for professional excellence.</span>
-              </p>
+              <p>© {currentYear} Lumban Sopian. All rights reserved.</p>
             </motion.div>
 
             <motion.div

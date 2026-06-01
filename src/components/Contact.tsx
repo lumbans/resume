@@ -231,7 +231,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <Linkedin className="text-blue-500" size={22} />
+                  <Linkedin className="text-blue-400" size={22} />
                   <a
                     href="https://www.linkedin.com/in/lumbans"
                     target="_blank"
@@ -255,7 +255,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <MapPin className="text-red-400" size={22} />
+                  <MapPin className="text-blue-400" size={22} />
                   <span className="text-gray-400">
                     Tangerang, Indonesia
                   </span>

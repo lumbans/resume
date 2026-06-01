@@ -37,9 +37,9 @@ const achievements: Achievement[] = [
     title: 'Enterprise Security Transformation',
     description: 'Led comprehensive cybersecurity strategy implementation across financial institution, establishing Zero Trust Architecture and DevSecOps practices.',
     metrics: [
-      { value: '40%', label: 'Security Incidents Reduction', icon: <Shield size={20} />, color: 'text-red-400' },
+      { value: '40%', label: 'Security Incidents Reduction', icon: <Shield size={20} />, color: 'text-green-400' },
       { value: '99.95%', label: 'System Availability', icon: <CheckCircle size={20} />, color: 'text-green-400' },
-      { value: '$5M+', label: 'Annual Security Budget', icon: <DollarSign size={20} />, color: 'text-yellow-400' },
+      { value: '$5M+', label: 'Annual Security Budget', icon: <DollarSign size={20} />, color: 'text-blue-400' },
       { value: '20+', label: 'Team Members', icon: <Users size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Achieved full compliance for PCI DSS and OJK regulations, passing all external security audits while significantly improving security posture.',
@@ -51,10 +51,10 @@ const achievements: Achievement[] = [
     title: 'Large-Scale Cloud Migration Success',
     description: 'Orchestrated migration of 100+ CDN assets from Akamai to AWS CloudFront with comprehensive DNS transformation to Route 53.',
     metrics: [
-      { value: '100+', label: 'CDN Assets Migrated', icon: <Globe size={20} />, color: 'text-purple-400' },
+      { value: '100+', label: 'CDN Assets Migrated', icon: <Globe size={20} />, color: 'text-blue-400' },
       { value: '25%', label: 'Latency Reduction', icon: <TrendingUp size={20} />, color: 'text-green-400' },
-      { value: '60%', label: 'Manual Effort Reduction', icon: <Zap size={20} />, color: 'text-orange-400' },
-      { value: '$2M+', label: 'Infrastructure Value', icon: <DollarSign size={20} />, color: 'text-yellow-400' }
+      { value: '60%', label: 'Manual Effort Reduction', icon: <Zap size={20} />, color: 'text-green-400' },
+      { value: '$2M+', label: 'Infrastructure Value', icon: <DollarSign size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Achieved zero downtime migration using blue-green deployment strategy, significantly improving content delivery performance.',
     category: 'Cloud Architecture',
@@ -67,8 +67,8 @@ const achievements: Achievement[] = [
     metrics: [
       { value: '50M+', label: 'Users Served', icon: <Users size={20} />, color: 'text-blue-400' },
       { value: '300%', label: 'User Growth Supported', icon: <BarChart3 size={20} />, color: 'text-green-400' },
-      { value: '35%', label: 'Downtime Reduction', icon: <Clock size={20} />, color: 'text-orange-400' },
-      { value: '18', label: 'Months to Complete', icon: <Target size={20} />, color: 'text-purple-400' }
+      { value: '35%', label: 'Downtime Reduction', icon: <Clock size={20} />, color: 'text-green-400' },
+      { value: '18', label: 'Months to Complete', icon: <Target size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Successfully transformed legacy payment infrastructure to modern cloud-native architecture, enabling massive scale growth.',
     category: 'Digital Transformation',
@@ -80,9 +80,9 @@ const achievements: Achievement[] = [
     description: 'Successfully managed and led cross-functional teams of 70+ professionals across SRE, QA, Automation Engineering, and Monitoring.',
     metrics: [
       { value: '70+', label: 'Team Members Led', icon: <Users size={20} />, color: 'text-blue-400' },
-      { value: '$10M+', label: 'Annual Budget Managed', icon: <DollarSign size={20} />, color: 'text-yellow-400' },
+      { value: '$10M+', label: 'Annual Budget Managed', icon: <DollarSign size={20} />, color: 'text-blue-400' },
       { value: '95%+', label: 'Project Success Rate', icon: <CheckCircle size={20} />, color: 'text-green-400' },
-      { value: '4', label: 'Division Management', icon: <Award size={20} />, color: 'text-purple-400' }
+      { value: '4', label: 'Division Management', icon: <Award size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Built high-performing engineering teams with exceptional retention rates and consistent delivery of complex technical initiatives.',
     category: 'Leadership Excellence',
@@ -94,8 +94,8 @@ const achievements: Achievement[] = [
     description: 'Implemented comprehensive infrastructure optimization strategies across multiple cloud platforms, achieving significant cost savings.',
     metrics: [
       { value: '15-30%', label: 'Cost Reduction', icon: <TrendingUp size={20} />, color: 'text-green-400' },
-      { value: '$500K+', label: 'Annual Savings', icon: <DollarSign size={20} />, color: 'text-yellow-400' },
-      { value: '4h→30m', label: 'Provisioning Time', icon: <Clock size={20} />, color: 'text-orange-400' },
+      { value: '$500K+', label: 'Annual Savings', icon: <DollarSign size={20} />, color: 'text-green-400' },
+      { value: '4h→30m', label: 'Provisioning Time', icon: <Clock size={20} />, color: 'text-blue-400' },
       { value: '1M+', label: 'Daily Active Users', icon: <Users size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Delivered substantial cost savings while improving system performance and reducing operational overhead through automation.',
@@ -109,8 +109,8 @@ const achievements: Achievement[] = [
     metrics: [
       { value: '20%', label: 'Performance Improvement', icon: <TrendingUp size={20} />, color: 'text-green-400' },
       { value: '100%', label: 'Zero Downtime', icon: <CheckCircle size={20} />, color: 'text-green-400' },
-      { value: 'Enterprise', label: 'Scale Implementation', icon: <Server size={20} />, color: 'text-purple-400' },
-      { value: 'Critical', label: 'Banking Services', icon: <Shield size={20} />, color: 'text-red-400' }
+      { value: 'Enterprise', label: 'Scale Implementation', icon: <Server size={20} />, color: 'text-blue-400' },
+      { value: 'Critical', label: 'Banking Services', icon: <Shield size={20} />, color: 'text-blue-400' }
     ],
     impact: 'Enhanced network reliability and performance for critical banking operations while maintaining 100% uptime during transition.',
     category: 'Network Architecture',
@@ -157,7 +157,7 @@ const Achievements: React.FC = () => {
                 <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-600/30">
                   {achievement.category}
                 </span>
-                <Award className="text-yellow-400 group-hover:text-yellow-300 transition-colors" size={24} />
+                <Award className="text-blue-400 group-hover:text-blue-300 transition-colors" size={24} />
               </div>
 
               {/* Title and Description */}
@@ -194,7 +194,7 @@ const Achievements: React.FC = () => {
               </div>
 
               {/* Business Impact */}
-              <div className="mb-6 p-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-lg border border-blue-500/20">
+              <div className="mb-6 p-4 bg-gradient-to-r from-blue-600/10 to-blue-700/10 rounded-lg border border-blue-500/20">
                 <div className="flex items-start space-x-3">
                   <TrendingUp className="text-blue-400 mt-1 flex-shrink-0" size={16} />
                   <div>
@@ -229,7 +229,7 @@ const Achievements: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30"
+          className="mt-16 bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-8 border border-blue-500/30"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -247,15 +247,15 @@ const Achievements: React.FC = () => {
               <div className="text-gray-300">Major Transformations</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">$17M+</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">$17M+</div>
               <div className="text-gray-300">Budget Managed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">50M+</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">50M+</div>
               <div className="text-gray-300">Users Impacted</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400 mb-2">95%+</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">95%+</div>
               <div className="text-gray-300">Success Rate</div>
             </div>
           </div>

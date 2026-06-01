@@ -44,7 +44,7 @@ const certifications: Certification[] = [
     status: 'completed',
     category: 'Financial Risk Management',
     description: 'Advanced certification in banking risk management and regulatory compliance for financial institutions.',
-    icon: <Shield className="text-red-400" size={24} />,
+    icon: <Shield className="text-blue-400" size={24} />,
     skills: ['Risk Management', 'Banking Compliance', 'Financial Regulations', 'OJK Compliance']
   },
   {
@@ -66,7 +66,7 @@ const certifications: Certification[] = [
     status: 'completed',
     category: 'Cloud Computing',
     description: 'Foundational certification demonstrating cloud concepts and AWS services knowledge.',
-    icon: <Cloud className="text-orange-400" size={24} />,
+    icon: <Cloud className="text-blue-400" size={24} />,
     skills: ['AWS Services', 'Cloud Architecture', 'Cloud Security', 'Cost Optimization']
   },
   {
@@ -77,7 +77,7 @@ const certifications: Certification[] = [
     status: 'completed',
     category: 'Cloud Architecture',
     description: 'Advanced certification for designing distributed applications on AWS platform.',
-    icon: <Cloud className="text-blue-500" size={24} />,
+    icon: <Cloud className="text-blue-400" size={24} />,
     skills: ['Solution Design', 'AWS Architecture', 'Scalability', 'High Availability']
   },
   {
@@ -88,7 +88,7 @@ const certifications: Certification[] = [
     status: 'completed',
     category: 'Information Security',
     description: 'Global certification for information security management and governance.',
-    icon: <Shield className="text-purple-400" size={24} />,
+    icon: <Shield className="text-blue-400" size={24} />,
     skills: ['Security Management', 'Risk Governance', 'Incident Response', 'Security Program']
   }
 ];
@@ -126,17 +126,17 @@ const professionalDevelopment = [
   {
     title: 'Industry Recognition',
     description: 'Invited speaker for DevOps and cybersecurity conferences',
-    icon: <Award className="text-yellow-400" size={20} />
+    icon: <Award className="text-blue-400" size={20} />
   },
   {
     title: 'Community Contribution',
     description: 'Active member of Indonesia DevOps Community',
-    icon: <Users className="text-green-400" size={20} />
+    icon: <Users className="text-blue-400" size={20} />
   },
   {
     title: 'Innovation',
     description: 'Developed proprietary automation frameworks reducing operational overhead by 25%+',
-    icon: <TrendingUp className="text-purple-400" size={20} />
+    icon: <TrendingUp className="text-blue-400" size={20} />
   }
 ];
 
@@ -201,7 +201,7 @@ const Certifications: React.FC = () => {
           >
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
-                <Award className="text-yellow-400" size={28} />
+                <Award className="text-blue-400" size={28} />
                 <span>Professional Certifications</span>
               </h3>
               
@@ -314,7 +314,7 @@ const Certifications: React.FC = () => {
             {/* Professional Development */}
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
-                <BookOpen className="text-green-400" size={28} />
+                <BookOpen className="text-blue-400" size={28} />
                 <span>Professional Development</span>
               </h3>
               
@@ -350,7 +350,7 @@ const Certifications: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30"
+          className="mt-16 bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-8 border border-blue-500/30"
         >
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-6">
@@ -358,7 +358,7 @@ const Certifications: React.FC = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <Star className="mx-auto text-yellow-400 mb-3" size={32} />
+                <Star className="mx-auto text-blue-400 mb-3" size={32} />
                 <div className="text-2xl font-bold text-white mb-1">5+</div>
                 <div className="text-gray-400">Certifications</div>
               </div>
@@ -368,12 +368,12 @@ const Certifications: React.FC = () => {
                 <div className="text-gray-400">Degrees</div>
               </div>
               <div className="text-center">
-                <TrendingUp className="mx-auto text-green-400 mb-3" size={32} />
+                <TrendingUp className="mx-auto text-blue-400 mb-3" size={32} />
                 <div className="text-2xl font-bold text-white mb-1">18+</div>
                 <div className="text-gray-400">Years Learning</div>
               </div>
               <div className="text-center">
-                <Award className="mx-auto text-purple-400 mb-3" size={32} />
+                <Award className="mx-auto text-blue-400 mb-3" size={32} />
                 <div className="text-2xl font-bold text-white mb-1">4+</div>
                 <div className="text-gray-400">Achievements</div>
               </div>

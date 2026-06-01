@@ -30,9 +30,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["DevSecOps", "Zero Trust Architecture", "AWS Transit Gateway", "PCI DSS", "Enterprise Security"],
     metrics: [
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "$5M+", label: "Annual Security Budget" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "40%", label: "Security Incidents Reduction" },
-      { icon: <Shield className="text-purple-400" size={20} />, value: "99.95%", label: "System Availability" }
+      { icon: <DollarSign className="text-blue-400" size={20} />, value: "$5M+", label: "Annual Security Budget" },
+      { icon: <TrendingUp className="text-green-400" size={20} />, value: "40%", label: "Security Incidents Reduction" },
+      { icon: <Shield className="text-green-400" size={20} />, value: "99.95%", label: "System Availability" }
     ]
   },
   {
@@ -47,9 +47,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["AWS CDK", "C#", "Infrastructure as Code", "DevSecOps", "SOC 2 Compliance"],
     metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "1M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Cost Reduction" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "4h→30m", label: "Provisioning Time" }
+      { icon: <Users className="text-blue-400" size={20} />, value: "1M+", label: "Daily Active Users" },
+      { icon: <TrendingUp className="text-green-400" size={20} />, value: "30%", label: "Cost Reduction" },
+      { icon: <DollarSign className="text-blue-400" size={20} />, value: "4h→30m", label: "Provisioning Time" }
     ]
   },
   {
@@ -63,9 +63,9 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["InfoSec", "Trend Micro DLP & Endpoint Protection", "VMware", "SolarWinds", "GCP", "GKE", "Cloudflare"],
     metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "2M+", label: "Daily Active Users" },
-      { icon: <TrendingUp className="text-blue-400" size={20} />, value: "30%", label: "Incident Reduction" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "<1h", label: "Recovery Time" }
+      { icon: <Users className="text-blue-400" size={20} />, value: "2M+", label: "Daily Active Users" },
+      { icon: <TrendingUp className="text-green-400" size={20} />, value: "30%", label: "Incident Reduction" },
+      { icon: <DollarSign className="text-blue-400" size={20} />, value: "<1h", label: "Recovery Time" }
     ]
   },
   {
@@ -80,8 +80,8 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ["GitLab CI", "Kubernetes", "AWS EKS", "Helm Charts", "SRE", "Automation Engineering"],
     metrics: [
-      { icon: <Users className="text-orange-400" size={20} />, value: "70+", label: "Team Members" },
-      { icon: <DollarSign className="text-green-400" size={20} />, value: "$10M+", label: "Annual Budget" },
+      { icon: <Users className="text-blue-400" size={20} />, value: "70+", label: "Team Members" },
+      { icon: <DollarSign className="text-blue-400" size={20} />, value: "$10M+", label: "Annual Budget" },
       { icon: <TrendingUp className="text-blue-400" size={20} />, value: "50M+", label: "Users Served" }
     ]
   }
@@ -195,7 +195,7 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30">
+          <div className="bg-gradient-to-r from-blue-600/20 to-blue-700/20 rounded-2xl p-8 border border-blue-500/30">
             <h3 className="text-2xl font-bold text-white mb-4">
               Selectively exploring executive technology leadership mandates
             </h3>

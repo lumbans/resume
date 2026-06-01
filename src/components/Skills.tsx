@@ -48,7 +48,7 @@ const skillCategories: SkillCategory[] = [
     title: 'DevOps & Automation',
     icon: <Settings size={24} />,
     description: 'Continuous integration, deployment, and infrastructure automation',
-    color: 'green',
+    color: 'blue',
     skills: [
       { name: 'CI/CD (GitLab CI, Jenkins)', level: 92, description: 'Automated deployment pipelines' },
       { name: 'Infrastructure as Code (Terraform, Ansible)', level: 90, description: 'Automated infrastructure provisioning' },
@@ -62,7 +62,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Security Leadership',
     icon: <Shield size={24} />,
     description: 'Enterprise security architecture and risk management',
-    color: 'red',
+    color: 'blue',
     skills: [
       { name: 'DevSecOps Implementation', level: 94, description: 'Security integrated development practices' },
       { name: 'Zero Trust Architecture', level: 90, description: 'Modern security framework implementation' },
@@ -76,7 +76,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Leadership & Strategy',
     icon: <Users size={24} />,
     description: 'Team leadership, strategic planning, and business alignment',
-    color: 'purple',
+    color: 'blue',
     skills: [
       { name: 'Digital Transformation', level: 95, description: 'Leading organizational technology transformation' },
       { name: 'Team Leadership (70+ members)', level: 92, description: 'Cross-functional team management' },
@@ -90,7 +90,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Monitoring & Observability',
     icon: <Monitor size={24} />,
     description: 'System monitoring, analytics, and performance optimization',
-    color: 'orange',
+    color: 'blue',
     skills: [
       { name: 'Prometheus/Grafana', level: 88, description: 'Infrastructure and application monitoring' },
       { name: 'ELK Stack', level: 85, description: 'Log aggregation and analysis' },
@@ -104,7 +104,7 @@ const skillCategories: SkillCategory[] = [
     title: 'Programming & Scripting',
     icon: <Code size={24} />,
     description: 'Development and automation scripting capabilities',
-    color: 'teal',
+    color: 'blue',
     skills: [
       { name: 'Python', level: 85, description: 'Automation and data processing scripts' },
       { name: 'Bash/Shell', level: 90, description: 'System administration and automation' },
@@ -281,17 +281,17 @@ const Skills: React.FC = () => {
             <div className="text-gray-400">Skill Categories</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Target className="mx-auto text-green-400 mb-3" size={32} />
+            <Target className="mx-auto text-blue-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">25+</div>
             <div className="text-gray-400">Core Technologies</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Zap className="mx-auto text-orange-400 mb-3" size={32} />
+            <Zap className="mx-auto text-blue-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">18+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-6 border border-slate-700/50">
-            <Network className="mx-auto text-purple-400 mb-3" size={32} />
+            <Network className="mx-auto text-blue-400 mb-3" size={32} />
             <div className="text-2xl font-bold text-white mb-1">10+</div>
             <div className="text-gray-400">Certifications</div>
           </div>
