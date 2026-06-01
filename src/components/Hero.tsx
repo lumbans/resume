@@ -143,11 +143,18 @@ const Hero: React.FC = () => {
             {/* Professional Image */}
             <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur-lg opacity-30"></div>
-              <img
-                src="/resume/images/professional-headshot.jpg"
-                alt="Lumban Sopian - IT Executive"
-                className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
-              />
+              <picture>
+                <source srcSet="/resume/images/professional-headshot.webp" type="image/webp" />
+                <img
+                  src="/resume/images/professional-headshot.jpg"
+                  alt="Lumban Sopian — Technology & Security Executive"
+                  width={384}
+                  height={384}
+                  decoding="async"
+                  fetchPriority="high"
+                  className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl"
+                />
+              </picture>
             </div>
 
             {/* Floating Cards with Key Highlights */}
