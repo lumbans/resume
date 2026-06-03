@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Cloud, 
-  Shield, 
-  Settings, 
-  Users, 
-  Code, 
-  Monitor,
-  Server,
-  Database,
-  Network,
-  Zap,
-  Target,
-  Award
+import {
+  ResponsiveContainer,
+  RadarChart,
+  Radar,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Tooltip
+} from 'recharts';
+import {
+  Cloud,
+  Shield,
+  Settings,
+  Users,
+  Code,
+  Monitor
 } from 'lucide-react';
+import { useTheme } from '../hooks/use-theme';
+
+const shortTitle: Record<string, string> = {
+  cloud: 'Cloud',
+  devops: 'DevOps',
+  security: 'Security',
+  leadership: 'Leadership',
+  monitoring: 'Monitoring',
+  programming: 'Programming'
+};
+
+const tierValue = (level: number) => (level >= 90 ? 3 : level >= 80 ? 2 : 1);
+const tierLabel = (v: number) =>
+  v >= 2.5 ? 'Expert' : v >= 1.5 ? 'Advanced' : 'Proficient';
 
 interface SkillCategory {
   id: string;
@@ -143,6 +160,20 @@ const Skills: React.FC = () => {
   const activeSkillCategory = skillCategories.find(cat => cat.id === activeCategory) || skillCategories[0];
   const colorClasses = getColorClasses(activeSkillCategory.color);
 
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+  const axisColor = isDark ? '#cbd5e1' : '#334155';
+  const gridColor = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(15,23,42,0.12)';
+  const radiusTickColor = isDark ? '#94a3b8' : '#64748b';
+
+  const radarData = skillCategories.map((cat) => ({
+    domain: shortTitle[cat.id] ?? cat.title,
+    score:
+      Math.round(
+        (cat.skills.reduce((sum, s) => sum + tierValue(s.level), 0) / cat.skills.length) * 10
+      ) / 10
+  }));
+
   return (
     <section id="skills" className="py-20 bg-white/50 dark:bg-navy-light/30">
       <div className="container mx-auto px-6">
@@ -160,6 +191,79 @@ const Skills: React.FC = () => {
             Comprehensive technical skills across cloud platforms, security, DevOps, 
             and leadership gained through 18+ years of hands-on experience
           </p>
+        </motion.div>
+
+        {/* Capability radar map (tier-based) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-12 bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-slate-200/50 dark:border-white/10"
+        >
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-2">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                Capability Map
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                Relative depth across core domains — expressed as proficiency tiers,
+                not self-rated percentages.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  { tier: 'Expert', desc: 'Sets direction, owns outcomes at scale' },
+                  { tier: 'Advanced', desc: 'Leads delivery hands-on with autonomy' },
+                  { tier: 'Proficient', desc: 'Operates effectively and guides others' }
+                ].map((t) => (
+                  <li key={t.tier} className="flex items-start space-x-3">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 flex-shrink-0" />
+                    <span className="text-sm">
+                      <span className="font-semibold text-slate-900 dark:text-white">{t.tier}</span>
+                      <span className="text-slate-500 dark:text-slate-400"> — {t.desc}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:col-span-3">
+              <ResponsiveContainer width="100%" height={340}>
+                <RadarChart data={radarData} outerRadius="72%">
+                  <defs>
+                    <linearGradient id="radarGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#2563eb" />
+                      <stop offset="100%" stopColor="#7c3aed" />
+                    </linearGradient>
+                  </defs>
+                  <PolarGrid stroke={gridColor} />
+                  <PolarAngleAxis dataKey="domain" tick={{ fill: axisColor, fontSize: 13 }} />
+                  <PolarRadiusAxis
+                    domain={[0, 3]}
+                    tickCount={4}
+                    angle={90}
+                    tick={{ fill: radiusTickColor, fontSize: 10 }}
+                    tickFormatter={(v) => (v === 0 ? '' : tierLabel(v))}
+                  />
+                  <Radar
+                    dataKey="score"
+                    stroke="#6366f1"
+                    strokeWidth={2}
+                    fill="url(#radarGrad)"
+                    fillOpacity={0.45}
+                  />
+                  <Tooltip
+                    contentStyle={{
+                      background: isDark ? '#0A192F' : '#ffffff',
+                      border: `1px solid ${isDark ? 'rgba(255,255,255,0.12)' : 'rgba(15,23,42,0.1)'}`,
+                      borderRadius: 8,
+                      color: isDark ? '#e2e8f0' : '#0f172a',
+                      fontSize: 13
+                    }}
+                    formatter={(value) => [`${tierLabel(Number(value))} (${value}/3)`, 'Tier']}
+                  />
+                </RadarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-8">
@@ -267,35 +371,6 @@ const Skills: React.FC = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Summary Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-xl p-6 border border-slate-200/50 dark:border-white/10">
-            <Award className="mx-auto text-blue-600 mb-3" size={32} />
-            <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">6</div>
-            <div className="text-slate-500 dark:text-slate-400">Skill Categories</div>
-          </div>
-          <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-xl p-6 border border-slate-200/50 dark:border-white/10">
-            <Target className="mx-auto text-cyan-600 mb-3" size={32} />
-            <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">25+</div>
-            <div className="text-slate-500 dark:text-slate-400">Core Technologies</div>
-          </div>
-          <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-xl p-6 border border-slate-200/50 dark:border-white/10">
-            <Zap className="mx-auto text-violet-600 mb-3" size={32} />
-            <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">18+</div>
-            <div className="text-slate-500 dark:text-slate-400">Years Experience</div>
-          </div>
-          <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-xl p-6 border border-slate-200/50 dark:border-white/10">
-            <Network className="mx-auto text-indigo-600 mb-3" size={32} />
-            <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">10+</div>
-            <div className="text-slate-500 dark:text-slate-400">Certifications</div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

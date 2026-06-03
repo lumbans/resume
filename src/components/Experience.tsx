@@ -1,12 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Building, Calendar, TrendingUp, Users, DollarSign, Shield } from 'lucide-react';
+import {
+  Calendar,
+  TrendingUp,
+  Users,
+  DollarSign,
+  Shield,
+  ShieldCheck,
+  Cloud,
+  Server,
+  GitBranch
+} from 'lucide-react';
 
 interface ExperienceItem {
   title: string;
   company: string;
   period?: string;
+  icon: React.ReactNode;
   achievements: string[];
   technologies: string[];
   metrics: {
@@ -21,6 +32,7 @@ const experienceData: ExperienceItem[] = [
     title: "Senior Vice President – Division Head",
     company: "PT. Bank Multiarta Sentosa",
     period: "Sep 2023 – Present",
+    icon: <ShieldCheck size={20} />,
     achievements: [
       "Own enterprise security and technology governance for a regulated bank, directing 20+ professionals across InfoSec, QA, IT GRC, and DevOps — accountable for security posture, regulatory standing, and operational resilience",
       "Reduced security incidents by 40% through implementing enterprise-grade DevSecOps practices and automated threat detection systems",
@@ -39,6 +51,7 @@ const experienceData: ExperienceItem[] = [
     title: "Principal DevOps Engineer",
     company: "Lyte Ventures Pte. Ltd",
     period: "Oct 2022 – Oct 2023",
+    icon: <Cloud size={20} />,
     achievements: [
       "Architected and implemented scalable cloud-native solutions using AWS CDK with C#, serving 1M+ daily active users",
       "Reduced cloud operational costs by 30% through infrastructure optimization and automated resource scaling policies",
@@ -56,6 +69,7 @@ const experienceData: ExperienceItem[] = [
     title: "VP - IT Service & Infrastructure Division Head",
     company: "PT Bank Jago Tbk",
     period: "Dec 2021 – Dec 2022",
+    icon: <Server size={20} />,
     achievements: [
       "Managed hybrid infrastructure and led server room migrations as Head of IT Security, sustaining 99.9% uptime for critical banking services",
       "Coordinated disaster recovery simulations, improving system resilience by 25%",
@@ -72,6 +86,7 @@ const experienceData: ExperienceItem[] = [
     title: "Vice President - DevOps Division Head",
     company: "PT Fintek Karya Nusantara (LinkAja)",
     period: "Aug 2019 – Oct 2021",
+    icon: <GitBranch size={20} />,
     achievements: [
       "Directed a 70+ person engineering organization (SRE, QA, Automation, Monitoring) and a $10M+ infrastructure budget for a national digital-payments platform",
       "Implemented comprehensive CI/CD pipelines using GitLab CI, Helm Charts, and Kubernetes on AWS EKS, serving 50M+ users",
@@ -90,11 +105,11 @@ const experienceData: ExperienceItem[] = [
 const Experience: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.05
   });
 
   return (
-    <section id="experience" className="py-20 bg-slate-100/50 dark:bg-navy-light/40">
+    <section id="experience" className="py-20 bg-slate-100/50 dark:bg-navy-light/20">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -112,76 +127,80 @@ const Experience: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-12">
+        {/* Timeline */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical rail */}
+          <div
+            aria-hidden="true"
+            className="absolute left-5 sm:left-7 -translate-x-1/2 top-1 bottom-1 w-0.5 bg-gradient-to-b from-blue-500 via-indigo-500 to-violet-500 opacity-60 dark:opacity-50"
+          />
+
           {experienceData.map((experience, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
-              className="bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300"
+              className="relative pl-14 sm:pl-20 pb-12 last:pb-0"
             >
-              <div className="grid lg:grid-cols-3 gap-8">
-                {/* Left Column - Role Info */}
-                <div className="lg:col-span-1">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <Building className="text-blue-600" size={24} />
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
-                        {experience.title}
-                      </h3>
-                      <div className="text-blue-600 font-semibold">
-                        {experience.company}
-                      </div>
-                      {experience.period && (
-                        <div className="flex items-center text-slate-500 dark:text-slate-400 text-sm mt-1">
-                          <Calendar size={14} className="mr-1" />
-                          {experience.period}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* Key Metrics */}
-                  <div className="space-y-3">
-                    {experience.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex items-center space-x-3">
-                        {metric.icon}
-                        <div>
-                          <div className="text-slate-900 dark:text-white font-semibold">{metric.value}</div>
-                          <div className="text-slate-500 dark:text-slate-400 text-sm">{metric.label}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+              {/* Node */}
+              <div className="absolute left-5 sm:left-7 -translate-x-1/2 top-0 w-10 h-10 rounded-full bg-white dark:bg-navy-light border-2 border-blue-500 flex items-center justify-center text-blue-600 shadow-md shadow-slate-300/50 dark:shadow-black/30 z-10">
+                {experience.icon}
+              </div>
+
+              {/* Period badge */}
+              {experience.period && (
+                <div className="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-blue-600/10 text-blue-600 border border-blue-600/20 mb-3">
+                  <Calendar size={13} className="mr-1.5" />
+                  {experience.period}
+                </div>
+              )}
+
+              {/* Card */}
+              <div className="bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  {experience.title}
+                </h3>
+                <div className="text-blue-600 font-semibold mb-5">
+                  {experience.company}
                 </div>
 
-                {/* Middle Column - Achievements */}
-                <div className="lg:col-span-2">
-                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Key Achievements</h4>
-                  <ul className="space-y-3 mb-6">
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <li key={achievementIndex} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-slate-600 dark:text-slate-300 leading-relaxed">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Technologies */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Technologies & Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-blue-600/20 text-blue-600 rounded-full text-sm border border-blue-600/30"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                {/* Metrics row */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {experience.metrics.map((metric, metricIndex) => (
+                    <div
+                      key={metricIndex}
+                      className="bg-slate-100/50 dark:bg-white/5 rounded-lg p-3 border border-slate-200/50 dark:border-white/10"
+                    >
+                      <div className="flex items-center space-x-2 mb-1">
+                        {metric.icon}
+                        <span className="text-slate-900 dark:text-white font-bold">{metric.value}</span>
+                      </div>
+                      <div className="text-slate-500 dark:text-slate-400 text-xs leading-tight">{metric.label}</div>
                     </div>
-                  </div>
+                  ))}
+                </div>
+
+                {/* Achievements */}
+                <ul className="space-y-3 mb-6">
+                  {experience.achievements.map((achievement, achievementIndex) => (
+                    <li key={achievementIndex} className="flex items-start space-x-3">
+                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {experience.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-600/20 text-blue-600 rounded-full text-xs border border-blue-600/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -195,7 +214,7 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30">
+          <div className="bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               Selectively exploring executive technology leadership mandates
             </h3>
