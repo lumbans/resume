@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Shield, Cloud, Users } from 'lucide-react';
-import CountUp from './CountUp';
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
@@ -87,39 +86,6 @@ const Hero: React.FC = () => {
                 delivering 40% reduction in security incidents, 30% cloud cost optimization, 50% MTTR improvement, and
                 sustained 99.95%+ service availability.
               </p>
-            </motion.div>
-
-            {/* Key Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="grid grid-cols-2 gap-6 mb-8"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  <CountUp to={18} suffix="+" />
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  <CountUp to={70} suffix="+" />
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Team Members Led</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  <CountUp to={10} prefix="$" suffix="M+" />
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Budget Managed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  <CountUp to={50} suffix="M+" />
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Users Served</div>
-              </div>
             </motion.div>
 
             {/* CTA Buttons */}

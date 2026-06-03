@@ -7,7 +7,6 @@ import Metrics from './components/Metrics';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Achievements from './components/Achievements';
 import Certifications from './components/Certifications';
 import Insights from './components/Insights';
 import Testimonials from './components/Testimonials';
@@ -25,7 +24,6 @@ function App() {
           <Experience />
           <Projects />
           <Skills />
-          <Achievements />
           <Certifications />
           <Insights />
           <Testimonials />
