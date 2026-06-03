@@ -33,6 +33,14 @@ img {
   object-position: top;
 }
 
+/* Editorial serif for display headings; body and small labels stay Inter */
+h1,
+h2,
+h3 {
+  font-family: 'Source Serif 4', Georgia, Cambria, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
+}
+
 /* Dark-mode base surface (covers overscroll / before React paints) */
 html.dark,
 html.dark body {
