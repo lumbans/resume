@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   Calendar,
@@ -10,7 +10,8 @@ import {
   ShieldCheck,
   Cloud,
   Server,
-  GitBranch
+  GitBranch,
+  ChevronDown
 } from 'lucide-react';
 
 interface ExperienceItem {
@@ -102,69 +103,74 @@ const experienceData: ExperienceItem[] = [
   }
 ];
 
-const Experience: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.05
-  });
+const ExperienceCard: React.FC<{
+  experience: ExperienceItem;
+  index: number;
+  inView: boolean;
+}> = ({ experience, index, inView }) => {
+  const [expanded, setExpanded] = useState(false);
+  const detailId = `experience-detail-${index}`;
 
   return (
-    <section id="experience" className="py-20 bg-slate-100/50 dark:bg-navy-light/20">
-      <div className="container mx-auto px-6">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
+      className="relative pl-14 sm:pl-20 pb-12 last:pb-0"
+    >
+      {/* Node */}
+      <div className="absolute left-5 sm:left-7 -translate-x-1/2 top-0 w-10 h-10 rounded-full bg-white dark:bg-navy-light border-2 border-blue-500 flex items-center justify-center text-blue-600 shadow-md shadow-slate-300/50 dark:shadow-black/30 z-10">
+        {experience.icon}
+      </div>
+
+      {/* Period badge */}
+      {experience.period && (
+        <div className="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-blue-600/10 text-blue-600 border border-blue-600/20 mb-3">
+          <Calendar size={13} className="mr-1.5" />
+          {experience.period}
+        </div>
+      )}
+
+      {/* Card */}
+      <div className="bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300">
+        {/* Clickable header: Title + Company */}
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          aria-controls={detailId}
+          className="w-full text-left group"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            Professional <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Experience</span>
-          </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            18+ years of strategic leadership in IT, driving digital transformation
-            and innovation across financial institutions and technology companies
-          </p>
-        </motion.div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            {experience.title}
+          </h3>
+          <div className="flex items-center justify-between gap-3 mt-1">
+            <span className="text-blue-600 font-semibold group-hover:underline underline-offset-4 decoration-blue-400">
+              {experience.company}
+            </span>
+            <span className="flex items-center gap-1.5 flex-shrink-0 text-xs font-medium text-slate-500 dark:text-slate-400 group-hover:text-blue-600 transition-colors">
+              <span className="hidden sm:inline">{expanded ? 'Hide details' : 'View details'}</span>
+              <ChevronDown
+                size={18}
+                className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+              />
+            </span>
+          </div>
+        </button>
 
-        {/* Timeline */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Vertical rail */}
-          <div
-            aria-hidden="true"
-            className="absolute left-5 sm:left-7 -translate-x-1/2 top-1 bottom-1 w-0.5 bg-gradient-to-b from-blue-500 via-indigo-500 to-violet-500 opacity-60 dark:opacity-50"
-          />
-
-          {experienceData.map((experience, index) => (
+        {/* Expandable detail */}
+        <AnimatePresence initial={false}>
+          {expanded && (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
-              className="relative pl-14 sm:pl-20 pb-12 last:pb-0"
+              id={detailId}
+              key="detail"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.35, ease: 'easeInOut' }}
+              className="overflow-hidden"
             >
-              {/* Node */}
-              <div className="absolute left-5 sm:left-7 -translate-x-1/2 top-0 w-10 h-10 rounded-full bg-white dark:bg-navy-light border-2 border-blue-500 flex items-center justify-center text-blue-600 shadow-md shadow-slate-300/50 dark:shadow-black/30 z-10">
-                {experience.icon}
-              </div>
-
-              {/* Period badge */}
-              {experience.period && (
-                <div className="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-blue-600/10 text-blue-600 border border-blue-600/20 mb-3">
-                  <Calendar size={13} className="mr-1.5" />
-                  {experience.period}
-                </div>
-              )}
-
-              {/* Card */}
-              <div className="bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {experience.title}
-                </h3>
-                <div className="text-blue-600 font-semibold mb-5">
-                  {experience.company}
-                </div>
-
+              <div className="pt-6 mt-5 border-t border-slate-200/50 dark:border-white/10">
                 {/* Metrics row */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {experience.metrics.map((metric, metricIndex) => (
@@ -204,6 +210,48 @@ const Experience: React.FC = () => {
                 </div>
               </div>
             </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+};
+
+const Experience: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.05
+  });
+
+  return (
+    <section id="experience" className="py-20 bg-slate-100/50 dark:bg-navy-light/20">
+      <div className="container mx-auto px-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            Professional <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Experience</span>
+          </h2>
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+            18+ years of strategic leadership in IT, driving digital transformation
+            and innovation across financial institutions and technology companies
+          </p>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical rail */}
+          <div
+            aria-hidden="true"
+            className="absolute left-5 sm:left-7 -translate-x-1/2 top-1 bottom-1 w-0.5 bg-gradient-to-b from-blue-500 via-indigo-500 to-violet-500 opacity-60 dark:opacity-50"
+          />
+
+          {experienceData.map((experience, index) => (
+            <ExperienceCard key={index} experience={experience} index={index} inView={inView} />
           ))}
         </div>
 
