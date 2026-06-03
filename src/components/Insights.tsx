@@ -67,7 +67,7 @@ const Insights: React.FC = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="insights" className="py-20 bg-slate-100/30">
+    <section id="insights" className="py-20 bg-slate-100/30 dark:bg-navy-light/20">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -76,10 +76,10 @@ const Insights: React.FC = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Insights & <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Perspectives</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Topics I speak and advise on — drawn from leading security, cloud, and
             platform engineering across regulated banking and fintech.
           </p>
@@ -92,13 +92,13 @@ const Insights: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
-              className="group bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
+              className="group bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-center justify-between mb-5">
                 <span className="px-3 py-1 bg-blue-600/20 text-blue-600 rounded-full text-sm border border-blue-600/30">
                   {insight.category}
                 </span>
-                <span className="flex items-center space-x-1 text-slate-500 text-xs uppercase tracking-wide">
+                <span className="flex items-center space-x-1 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">
                   {formatIcon(insight.format)}
                   <span>{insight.format}</span>
                 </span>
@@ -106,12 +106,12 @@ const Insights: React.FC = () => {
 
               <div className="flex items-start space-x-4 mb-4">
                 <div className={`${insight.color} mt-1 flex-shrink-0`}>{insight.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
                   {insight.title}
                 </h3>
               </div>
 
-              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 flex-grow">
                 {insight.abstract}
               </p>
 

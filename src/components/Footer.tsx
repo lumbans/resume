@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-slate-200/50">
+    <footer className="bg-white dark:bg-navy-light border-t border-slate-200/50 dark:border-white/10">
       <div className="container mx-auto px-6">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -66,10 +66,10 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="text-2xl font-bold text-slate-900 mb-4">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                   <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Lumban</span> Sopian
                 </div>
-                <p className="text-slate-500 mb-6 leading-relaxed">
+                <p className="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
                   Strategic IT Executive specializing in cybersecurity, cloud architecture, 
                   and digital transformation leadership.
                 </p>
@@ -79,11 +79,11 @@ const Footer: React.FC = () => {
                   {expertise.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-2 px-3 py-2 bg-slate-100/50 rounded-lg border border-slate-200/50"
+                      className="flex items-center space-x-2 px-3 py-2 bg-slate-100/50 dark:bg-navy-light/40 rounded-lg border border-slate-200/50 dark:border-white/10"
                       title={item.label}
                     >
                       <span className="text-blue-600">{item.icon}</span>
-                      <span className="text-slate-600 text-sm">{item.label}</span>
+                      <span className="text-slate-600 dark:text-slate-300 text-sm">{item.label}</span>
                     </div>
                   ))}
                 </div>
@@ -98,13 +98,13 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Quick Links</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Quick Links</h3>
                 <ul className="space-y-3">
                   {quickLinks.map((link, index) => (
                     <li key={index}>
                       <button
                         onClick={() => scrollToSection(link.href.substring(1))}
-                        className="text-slate-500 hover:text-blue-600 transition-colors duration-200 text-left"
+                        className="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200 text-left"
                       >
                         {link.label}
                       </button>
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Contact</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Contact</h3>
                 <ul className="space-y-3">
                   {contactInfo.map((contact, index) => (
                     <li key={index} className="flex items-center space-x-3">
@@ -132,12 +132,12 @@ const Footer: React.FC = () => {
                           href={contact.href}
                           target={contact.href.startsWith('http') ? '_blank' : '_self'}
                           rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="text-slate-500 hover:text-blue-600 transition-colors duration-200 text-sm"
+                          className="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200 text-sm"
                         >
                           {contact.label}
                         </a>
                       ) : (
-                        <span className="text-slate-500 text-sm">{contact.label}</span>
+                        <span className="text-slate-500 dark:text-slate-400 text-sm">{contact.label}</span>
                       )}
                     </li>
                   ))}
@@ -153,19 +153,19 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-lg font-semibold text-slate-900 mb-6">Professional Highlights</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Professional Highlights</h3>
                 <div className="space-y-4">
-                  <div className="text-center bg-slate-100/50 rounded-lg p-4 border border-slate-200/50">
+                  <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-lg p-4 border border-slate-200/50 dark:border-white/10">
                     <div className="text-2xl font-bold text-blue-600 mb-1">18+</div>
-                    <div className="text-slate-500 text-sm">Years Experience</div>
+                    <div className="text-slate-500 dark:text-slate-400 text-sm">Years Experience</div>
                   </div>
-                  <div className="text-center bg-slate-100/50 rounded-lg p-4 border border-slate-200/50">
+                  <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-lg p-4 border border-slate-200/50 dark:border-white/10">
                     <div className="text-2xl font-bold text-indigo-600 mb-1">70+</div>
-                    <div className="text-slate-500 text-sm">Team Members Led</div>
+                    <div className="text-slate-500 dark:text-slate-400 text-sm">Team Members Led</div>
                   </div>
-                  <div className="text-center bg-slate-100/50 rounded-lg p-4 border border-slate-200/50">
+                  <div className="text-center bg-slate-100/50 dark:bg-navy-light/40 rounded-lg p-4 border border-slate-200/50 dark:border-white/10">
                     <div className="text-2xl font-bold text-violet-600 mb-1">$10M+</div>
-                    <div className="text-slate-500 text-sm">Budget Managed</div>
+                    <div className="text-slate-500 dark:text-slate-400 text-sm">Budget Managed</div>
                   </div>
                 </div>
               </motion.div>
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-slate-200/50"></div>
+        <div className="border-t border-slate-200/50 dark:border-white/10"></div>
 
         {/* Bottom Footer */}
         <div className="py-8">
@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-slate-500 text-sm text-center md:text-left"
+              className="text-slate-500 dark:text-slate-400 text-sm text-center md:text-left"
             >
               <p>© {currentYear} Lumban Sopian. All rights reserved.</p>
             </motion.div>
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <a
                   href="mailto:lumban.sopian@msn.com"
-                  className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  className="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200"
                   title="Email"
                 >
                   <Mail size={18} />
@@ -209,7 +209,7 @@ const Footer: React.FC = () => {
                   href="https://www.linkedin.com/in/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  className="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200"
                   title="LinkedIn"
                 >
                   <Linkedin size={18} />
@@ -218,7 +218,7 @@ const Footer: React.FC = () => {
                   href="https://github.com/lumbans"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  className="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors duration-200"
                   title="GitHub"
                 >
                   <Github size={18} />
@@ -244,10 +244,10 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-slate-200/50 pt-8 pb-4"
+          className="border-t border-slate-200/50 dark:border-white/10 pt-8 pb-4"
         >
           <div className="text-center">
-            <p className="text-slate-500 text-sm italic max-w-2xl mx-auto">
+            <p className="text-slate-500 dark:text-slate-400 text-sm italic max-w-2xl mx-auto">
               "Driving digital transformation through strategic technology leadership, 
               security excellence, and innovation that delivers measurable business value."
             </p>

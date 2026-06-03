@@ -94,7 +94,7 @@ const Experience: React.FC = () => {
   });
 
   return (
-    <section id="experience" className="py-20 bg-slate-100/50">
+    <section id="experience" className="py-20 bg-slate-100/50 dark:bg-navy-light/40">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -103,10 +103,10 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Professional <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Experience</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             18+ years of strategic leadership in IT, driving digital transformation
             and innovation across financial institutions and technology companies
           </p>
@@ -119,7 +119,7 @@ const Experience: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.12, ease: 'easeOut' }}
-              className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 hover:border-blue-500/30 transition-all duration-300"
+              className="bg-white/80 dark:bg-navy-light/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 dark:border-white/10 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Left Column - Role Info */}
@@ -127,14 +127,14 @@ const Experience: React.FC = () => {
                   <div className="flex items-center space-x-3 mb-4">
                     <Building className="text-blue-600" size={24} />
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-1">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
                         {experience.title}
                       </h3>
                       <div className="text-blue-600 font-semibold">
                         {experience.company}
                       </div>
                       {experience.period && (
-                        <div className="flex items-center text-slate-500 text-sm mt-1">
+                        <div className="flex items-center text-slate-500 dark:text-slate-400 text-sm mt-1">
                           <Calendar size={14} className="mr-1" />
                           {experience.period}
                         </div>
@@ -148,8 +148,8 @@ const Experience: React.FC = () => {
                       <div key={metricIndex} className="flex items-center space-x-3">
                         {metric.icon}
                         <div>
-                          <div className="text-slate-900 font-semibold">{metric.value}</div>
-                          <div className="text-slate-500 text-sm">{metric.label}</div>
+                          <div className="text-slate-900 dark:text-white font-semibold">{metric.value}</div>
+                          <div className="text-slate-500 dark:text-slate-400 text-sm">{metric.label}</div>
                         </div>
                       </div>
                     ))}
@@ -158,19 +158,19 @@ const Experience: React.FC = () => {
 
                 {/* Middle Column - Achievements */}
                 <div className="lg:col-span-2">
-                  <h4 className="text-lg font-semibold text-slate-900 mb-4">Key Achievements</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Key Achievements</h4>
                   <ul className="space-y-3 mb-6">
                     {experience.achievements.map((achievement, achievementIndex) => (
                       <li key={achievementIndex} className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-slate-600 leading-relaxed">{achievement}</span>
+                        <span className="text-slate-600 dark:text-slate-300 leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Technologies */}
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Technologies & Skills</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Technologies & Skills</h4>
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech, techIndex) => (
                         <span
@@ -196,10 +196,10 @@ const Experience: React.FC = () => {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-violet-600/20 rounded-2xl p-8 border border-indigo-500/30">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               Selectively exploring executive technology leadership mandates
             </h3>
-            <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
               Open to senior leadership roles and board-level advisory where security, cloud, and platform
               engineering are central to the business strategy.
             </p>

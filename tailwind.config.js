@@ -20,6 +20,10 @@ module.exports = {
 				sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
 			},
 			colors: {
+				navy: {
+					DEFAULT: '#0A192F',
+					light: '#112240',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 relative overflow-hidden bg-slate-100"
+      className="py-20 relative overflow-hidden bg-slate-100 dark:bg-navy"
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -95,10 +95,10 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
             Let's <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Open to strategic conversations around cloud, DevSecOps,
             digital transformation, and technology leadership.
           </p>
@@ -111,8 +111,8 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white rounded-2xl p-8 border border-slate-200">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">
+            <div className="bg-white dark:bg-navy-light rounded-2xl p-8 border border-slate-200 dark:border-white/10">
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
                 Send a Message
               </h3>
 
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 dark:bg-navy border border-slate-200 dark:border-white/10 rounded-lg text-slate-900 dark:text-white dark:placeholder-slate-400 focus:outline-none focus:border-blue-500"
                 />
 
                 <input
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 dark:bg-navy border border-slate-200 dark:border-white/10 rounded-lg text-slate-900 dark:text-white dark:placeholder-slate-400 focus:outline-none focus:border-blue-500"
                 />
 
                 <input
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="Subject"
-                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-100 dark:bg-navy border border-slate-200 dark:border-white/10 rounded-lg text-slate-900 dark:text-white dark:placeholder-slate-400 focus:outline-none focus:border-blue-500"
                 />
 
                 <textarea
@@ -186,7 +186,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Your Message"
-                  className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-blue-500 resize-none"
+                  className="w-full px-4 py-3 bg-slate-100 dark:bg-navy border border-slate-200 dark:border-white/10 rounded-lg text-slate-900 dark:text-white dark:placeholder-slate-400 focus:outline-none focus:border-blue-500 resize-none"
                 />
 
                 <button
@@ -214,8 +214,8 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="bg-white rounded-2xl p-8 border border-slate-200">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">
+            <div className="bg-white dark:bg-navy-light rounded-2xl p-8 border border-slate-200 dark:border-white/10">
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
                 Contact Information
               </h3>
 
@@ -243,7 +243,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <Github className="text-slate-600" size={22} />
+                  <Github className="text-slate-600 dark:text-slate-300" size={22} />
                   <a
                     href="https://github.com/lumbans"
                     target="_blank"
@@ -256,7 +256,7 @@ const Contact: React.FC = () => {
 
                 <div className="flex items-center space-x-4">
                   <MapPin className="text-blue-600" size={22} />
-                  <span className="text-slate-500">
+                  <span className="text-slate-500 dark:text-slate-400">
                     Tangerang, Indonesia
                   </span>
                 </div>
@@ -266,11 +266,11 @@ const Contact: React.FC = () => {
             <div className="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6">
               <div className="flex items-center space-x-3 mb-3">
                 <Clock className="text-blue-600" size={20} />
-                <span className="text-slate-900 font-medium">
+                <span className="text-slate-900 dark:text-white font-medium">
                   Response Time
                 </span>
               </div>
-              <p className="text-slate-500 text-sm">
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
                 Typical response within 24–48 hours.
               </p>
             </div>
