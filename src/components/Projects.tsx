@@ -207,7 +207,7 @@ const ProjectCard: React.FC<{ project: Project; index: number; inView: boolean }
               key={o.label}
               className="text-center bg-gradient-to-br from-blue-600/10 to-violet-600/10 rounded-lg p-4 border border-blue-500/20"
             >
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                 {o.value}
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">{o.label}</div>
@@ -311,7 +311,7 @@ const Projects: React.FC = () => {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Featured{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>

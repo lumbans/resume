@@ -113,7 +113,7 @@ const Metrics: React.FC = () => {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Executive Impact{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
               at a Glance
             </span>
           </h2>
@@ -135,7 +135,7 @@ const Metrics: React.FC = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 mb-4 group-hover:scale-110 transition-transform">
                 {metric.icon}
               </div>
-              <div className="text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              <div className="text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                 <CountUp to={metric.to} prefix={metric.prefix} suffix={metric.suffix} decimals={metric.decimals} />
               </div>
               <div className="text-slate-900 dark:text-white font-semibold">{metric.label}</div>
@@ -157,7 +157,8 @@ const Metrics: React.FC = () => {
                 <defs>
                   <linearGradient id="outcomeGrad" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0%" stopColor="#2563eb" />
-                    <stop offset="100%" stopColor="#7c3aed" />
+                    <stop offset="55%" stopColor="#7c3aed" />
+                    <stop offset="100%" stopColor="#d946ef" />
                   </linearGradient>
                 </defs>
                 <XAxis type="number" hide domain={[0, 60]} />

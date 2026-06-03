@@ -28,12 +28,12 @@ const Hero: React.FC = () => {
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/60 to-white/35 dark:from-navy/92 dark:via-navy/75 dark:to-navy/45"
       />
-      {/* Subtle jewel tint */}
+      {/* Vivid jewel tint */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(at 18% 22%, rgba(59, 130, 246, 0.10) 0px, transparent 50%), radial-gradient(at 82% 28%, rgba(139, 92, 246, 0.10) 0px, transparent 50%)`
+          backgroundImage: `radial-gradient(at 14% 18%, rgba(37, 99, 235, 0.28) 0px, transparent 45%), radial-gradient(at 84% 26%, rgba(217, 70, 239, 0.24) 0px, transparent 45%), radial-gradient(at 60% 88%, rgba(124, 58, 237, 0.22) 0px, transparent 45%), radial-gradient(at 92% 80%, rgba(6, 182, 212, 0.18) 0px, transparent 45%)`
         }}
       />
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
               className="mb-6"
             >
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Lumban</span>
+                <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Lumban</span>
                 <br />
                 <span className="text-slate-900 dark:text-white">Sopian</span>
               </h1>
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
             >
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/30"
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-fuchsia-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-900/30"
               >
                 Get In Touch
               </button>
@@ -210,8 +210,10 @@ const Hero: React.FC = () => {
 
       {/* Background Overlay Elements */}
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-violet-500/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-blue-500/25 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-fuchsia-500/25 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-violet-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-cyan-400/20 rounded-full blur-3xl"></div>
       </div>
     </section>
   );

@@ -185,7 +185,7 @@ const Skills: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            Technical <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Expertise</span>
+            Technical <span className="bg-gradient-to-r from-blue-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Expertise</span>
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Comprehensive technical skills across cloud platforms, security, DevOps, 
@@ -231,7 +231,8 @@ const Skills: React.FC = () => {
                   <defs>
                     <linearGradient id="radarGrad" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="#2563eb" />
-                      <stop offset="100%" stopColor="#7c3aed" />
+                      <stop offset="55%" stopColor="#7c3aed" />
+                      <stop offset="100%" stopColor="#d946ef" />
                     </linearGradient>
                   </defs>
                   <PolarGrid stroke={gridColor} />

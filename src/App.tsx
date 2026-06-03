@@ -27,7 +27,7 @@ const SectionFallback: React.FC = () => (
 function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy dark:via-[#0d1f3a] dark:to-navy transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-fuchsia-50 dark:from-navy dark:via-[#0d1f3a] dark:to-navy transition-colors duration-300">
         <Header />
         <main>
           <Hero />
